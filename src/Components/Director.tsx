@@ -5,7 +5,7 @@ const Director = () => {
   return (
     <>
       <motion.div
-        className="relative md:flex md:flex-col md:items-center md:justify-center ml-5 mr-5 p-8 bg-cover bg-center bg-no-repeat mb-12 mt-[-6px] md:h-[520px] bg-black"
+        className="relative md:flex md:flex-col md:items-center md:justify-center ml-5 mr-5 p-8 bg-cover bg-center bg-no-repeat mb-12 mt-[-6px] md:h-[520px] "
         initial={{ y: 50, opacity: 0 }}
         whileInView={{ y: 0, opacity: 1 }}
         transition={{
@@ -15,6 +15,7 @@ const Director = () => {
           duration: 0.5
         }}
         viewport={{ once: true }}
+        style={{backgroundImage:`url(/EdView.jpg)`}}
       >
        
         <div className="relative z-10 md:flex md:flex-col md:items-center md:justify-center max-w-2xl mx-auto text-center ">

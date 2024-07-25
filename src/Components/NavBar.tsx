@@ -1,4 +1,4 @@
-import  { useState,useEffect } from "react";
+import React, { useState,useEffect } from "react";
 import { NavLink } from "react-router-dom";
 import {  motion } from "framer-motion";
 
@@ -78,7 +78,7 @@ const NavBar = () => {
       <div className="py-4 md:px-10 px-2 relative flex justify-between items-center">
         <div className="text-white gap-3 font-bold text-2xl cursor-pointer flex items-center font-Poppins p-3 rounded-md">
           <div className="border border-gray-300 p-1 mr-[-30px] rounded-md flex items-center">
-            <img className="w-10 h-14" src="/ED DP.png" alt="Not Supported" />
+            <img className="w-10 h-14" src="/ED DP.png" alt="" />
             <span className="ml-3 font-1xl">
               Ed Educational <br /> Complex
             </span>
@@ -107,9 +107,9 @@ const NavBar = () => {
                 
                 
                 onMouseEnter={toggleAboutMenu}
-                onMouseLeave={handleAboutLeave}
+                
               >
-                <span>About Ed</span>
+                <span >About Ed</span>
                 
                 
                 <svg
@@ -498,10 +498,9 @@ const NavBar = () => {
             <NavLink
               
               to="/"
-              className="text-white nav-link hover:text-gray-400 duration-500 text-xl font-bold font-Poppins  "
+              className="text-white nav-link  hover:text-gray-400 duration-500 text-xl font-bold font-Poppins  "
               
               onClick={closeNavBar}
-              
               
             >
               Home
@@ -969,7 +968,7 @@ const NavBar = () => {
                   <NavLink
                     
                     to="/admission/requirements"
-                    className="text-white nav-link hover:text-gray-400 duration-500 block font-bold text-xl font-Poppins ml-6 border-l-4 border-yellow-500 px-4"
+                    className="text-white hover:text-gray-400 duration-500 block font-bold text-xl font-Poppins ml-6 border-l-4 border-yellow-500 px-4"
                     onClick={closeNavBar}
                     
                   >
@@ -978,7 +977,7 @@ const NavBar = () => {
                 </motion.li>
                 <motion.li variants={itemVariants} className="text-lg py-1">
                   <NavLink
-                    
+                   
                     to="/admission/tuition"
                     className="text-white hover:text-gray-400 duration-500 block font-bold text-xl font-Poppins ml-6 border-l-4 border-white px-4"
                     onClick={closeNavBar}
