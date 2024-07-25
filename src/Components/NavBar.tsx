@@ -52,9 +52,6 @@ const NavBar = () => {
     open: { opacity: 1, x: 0,type:'spring',stiffness: 60, ease:'easeIn', duration:1 },
     closed: { opacity: 0, x: -100 },
   };
-  const handleAboutHover = () => {
-    setAboutMenuOpen(true);
-  };
 
   const handleAboutLeave = () => {
     setAboutMenuOpen(false);
@@ -90,17 +87,15 @@ const NavBar = () => {
 
         {/* Navigation Links - visible on large screens */}
         <ul className="hidden md:flex text-center space-x-2 md:mr-40">
-          <li className="text-xl mr-2 pb-3">
             <NavLink
-              exact
               to="/"
-              className="text-white hover:text-gray-400 duration-500 md:border-r-2 md:border-red-600 md:px-2 md:font-bold"
-              activeClassName="active-link"
+              className={({ isActive }) => 
+                `text-white hover:text-gray-400 duration-500 md:border-r-2 md:border-red-600 md:px-2 md:font-bold ${isActive ? 'active-link' : ''}`
+              }
               onClick={closeNavBar}
             >
               Home
             </NavLink>
-          </li>
           {/* About list on md screen */}
           <li className="text-xl  pb-3 relative">
             <div className="flex items-center">
@@ -121,7 +116,7 @@ const NavBar = () => {
                 viewBox="0 0 24 24"
                   stroke-width="1.5"
                   stroke="currentColor"
-                  class="size-6"
+                  className="size-6"
                  
                   >
                     <path 
@@ -149,37 +144,36 @@ const NavBar = () => {
               >
                 <motion.li variants={itemVariants} className="text-lg py-1">
                   <NavLink
-                    exact
                     to="/about/history"
-                    className="text-sky-900 hover:text-sky-900 duration-5000 block border-l-4 border-red-500 px-2 font-bold"
+                    className={({ isActive }) => 
+                      `text-sky-900 hover:text-sky-900 duration-5000 block border-l-4 border-red-500 px-2 font-bold ${isActive ? 'active-link' : ''}`
+                    }
                     onClick={closeNavBar}
-                    
-                    
                   >
                     History
                   </NavLink>
                 </motion.li>
                 <motion.li variants={itemVariants} className="text-lg py-1">
-                  <NavLink
-                    exact
-                    to="/about/mission"
-                    className="text-sky-900 hover:text-sky-900 duration-500 block border-l-4 border-pink-500 px-2 font-bold"
-                    onClick={closeNavBar}
-                 
-                  >
-                    Mission
-                  </NavLink>
+                <NavLink
+                      to="/about/mission"
+                      className={({ isActive }) => 
+                        `text-sky-900 hover:text-sky-900 duration-500 block border-l-4 border-pink-500 px-2 font-bold ${isActive ? 'active-link' : ''}`
+                      }
+                      onClick={closeNavBar}
+                    >
+                      Mission
+                    </NavLink>
                 </motion.li>
                 <motion.li variants={itemVariants} className="text-lg py-1">
-                  <NavLink
-                    exact
-                    to="/DirectorsMessage"
-                    className="text-sky-900 hover:text-sky-900 duration-500 block border-l-4 border-sky-900 px-2 font-bold"
-                    onClick={closeNavBar}
-                 
-                  >
-                    Director's message
-                  </NavLink>
+                    <NavLink
+                  to="/DirectorsMessage"
+                  className={({ isActive }) => 
+                    `text-sky-900 hover:text-sky-900 duration-500 block border-l-4 border-sky-900 px-2 font-bold ${isActive ? 'active-link' : ''}`
+                  }
+                  onClick={closeNavBar}
+                >
+                  Director's message
+                </NavLink>
                 </motion.li>
               </motion.div>
             )}
@@ -187,14 +181,14 @@ const NavBar = () => {
           {/* Academics on md screen  */}
           <li className="text-xl  pb-1">
             <div>
-              <NavLink
-                exact
-                to="/academics"
-                className="text-white hover:text-gray-400 duration-500 relative flex items-center md:border-r-2 md:border-red-600 md:px-2 gap-2 md:font-bold"
-                activeClassName="active-link"
-                onMouseEnter={toggleAcademicMenu}
-                onMouseLeave={handleAcademicsLeave}
-              >
+                  <NavLink
+                  to="/academics"
+                  className={({ isActive }) => 
+                    `text-white hover:text-gray-400 duration-500 relative flex items-center md:border-r-2 md:border-red-600 md:px-2 gap-2 md:font-bold ${isActive ? 'active-link' : ''}`
+                  }
+                  onMouseEnter={toggleAcademicMenu}
+                  onMouseLeave={handleAcademicsLeave}
+                >
                 <span>Academics</span>
                 <svg
                  xmlns="http://www.w3.org/2000/svg" 
@@ -202,7 +196,7 @@ const NavBar = () => {
                 viewBox="0 0 24 24"
                   stroke-width="1.5"
                   stroke="currentColor"
-                  class="size-6"
+                  className="size-6"
                  
                   >
                     <path 
@@ -224,43 +218,47 @@ const NavBar = () => {
               >
                 <motion.li variants={itemVariants} className="text-lg py-1">
                   <NavLink
-                    exact
-                    to="/academics/programs"
-                    className="text-sky-900 hover:text-sky-900 duration-500 block border-l-4 border-orange-500 px-4 font-bold"
-                    onClick={closeNavBar}
-                  >
-                    Academic Programs
-                  </NavLink>
+                  to="/academics/programs"
+                  className={({ isActive }) => 
+                    `text-sky-900 hover:text-sky-900 duration-500 block border-l-4 border-orange-500 px-4 font-bold ${isActive ? 'active-link' : ''}`
+                  }
+                  onClick={closeNavBar}
+                >
+                  Academic Programs
+                </NavLink>
+                </motion.li>
+                <motion.li variants={itemVariants} className="text-lg py-1">
+                <NavLink
+                  to="/academics/departments"
+                  className={({ isActive }) => 
+                    `text-sky-900 hover:text-sky-900 duration-500 block border-l-4 border-gray-700 px-4 font-bold ${isActive ? 'active-link' : ''}`
+                  }
+                  onClick={closeNavBar}
+                >
+                  Departments
+                </NavLink>
+                </motion.li>
+                <motion.li variants={itemVariants} className="text-lg py-1">
+                   <NavLink
+                  to="/academics/departments"
+                  className={({ isActive }) => 
+                    `text-sky-900 hover:text-sky-900 duration-500 block border-l-4 border-yellow-500 px-4 font-bold ${isActive ? 'active-link' : ''}`
+                  }
+                  onClick={closeNavBar}
+                >
+                  Curriculum
+                </NavLink>
                 </motion.li>
                 <motion.li variants={itemVariants} className="text-lg py-1">
                   <NavLink
-                    exact
-                    to="/academics/departments"
-                    className="text-sky-900 hover:text-sky-900 duration-500 block border-l-4 border-gray-700 px-4 font-bold"
-                    onClick={closeNavBar}
-                  >
-                    Departments
-                  </NavLink>
-                </motion.li>
-                <motion.li variants={itemVariants} className="text-lg py-1">
-                  <NavLink
-                    exact
-                    to="/academics/departments"
-                    className="text-sky-900 hover:text-sky-900 duration-500 block border-l-4 border-yellow-500 px-4 font-bold"
-                    onClick={closeNavBar}
-                  >
-                    Curriculum
-                  </NavLink>
-                </motion.li>
-                <motion.li variants={itemVariants} className="text-lg py-1">
-                  <NavLink
-                    exact
-                    to="/academics/departments"
-                    className="text-sky-900 hover:text-sky-900 duration-500 block border-l-4 border-pink-500 px-4 font-bold"
-                    onClick={closeNavBar}
-                  >
-                    Grading System
-                  </NavLink>
+                to="/academics/departments"
+                className={({ isActive }) => 
+                  `text-sky-900 hover:text-sky-900 duration-500 block border-l-4 border-pink-500 px-4 font-bold ${isActive ? 'active-link' : ''}`
+                }
+                onClick={closeNavBar}
+              >
+                Grading System
+              </NavLink>
                 </motion.li>
 
               </motion.div>
@@ -268,11 +266,11 @@ const NavBar = () => {
           </li>
           {/* Admission on md screen */}
           <li className="text-xl  pb-3">
-            <NavLink
-              exact
+          <NavLink
               to="/admission"
-              className="text-white hover:text-gray-400 duration-500 md:w-36 md:border-r-2 md:border-red-600 md:px-8 gap-2 md:font-bold"
-              activeClassName="active-link"
+              className={({ isActive }) => 
+                `text-white hover:text-gray-400 duration-500 md:w-36 md:border-r-2 md:border-red-600 md:px-8 gap-2 md:font-bold ${isActive ? 'active-link' : ''}`
+              }
               onMouseEnter={toggleAdmissionMenu}
               onMouseLeave={handleAdmissionLeave}
             >
@@ -292,42 +290,48 @@ const NavBar = () => {
               >
                 <motion.li variants={itemVariants} className="text-lg py-1">
                   <NavLink
-                    exact
                     to="/academics/programs"
-                    className="text-sky-900 flex hover:text-sky-900 duration-500  border-l-4 border-red-500 px-4 font-bold"
+                    className={({ isActive }) => 
+                      `text-sky-900 flex hover:text-sky-900 duration-500 border-l-4 border-red-500 px-4 font-bold ${isActive ? 'active-link' : ''}`
+                    }
                     onClick={closeNavBar}
                   >
                     Admission Requirements
                   </NavLink>
                 </motion.li>
                 <motion.li variants={itemVariants} className="text-lg py-1">
-                  <NavLink
-                    exact
-                    to="/academics/departments"
-                    className="text-sky-900 hover:text-sky-900 duration-500 block border-l-4 border-violet-800 px-4 font-bold"
-                    onClick={closeNavBar}
-                  >
-                    Tuition and Fees
-                  </NavLink>
+                <NavLink
+                  to="/academics/departments"
+                  className={({ isActive }) => 
+                    `text-sky-900 hover:text-sky-900 duration-500 block border-l-4 border-violet-800 px-4 font-bold ${isActive ? 'active-link' : ''}`
+                  }
+                  onClick={closeNavBar}
+                >
+                  Tuition and Fees
+                </NavLink>
                 </motion.li>
                 <motion.li variants={itemVariants} className="text-lg py-1">
-                  <NavLink
-                    exact
+                <NavLink
+ 
+
                     to="/academics/departments"
-                    className="text-sky-900 hover:text-sky-900 duration-500 block border-l-4 border-pink-800 px-4 font-bold"
+                    className={({ isActive }) => 
+                      `text-sky-900 hover:text-sky-900 duration-500 block border-l-4 border-pink-800 px-4 font-bold ${isActive ? 'active-link' : ''}`
+                    }
                     onClick={closeNavBar}
-                  >
+                    >
                     Scholarships and Financial Aid
                   </NavLink>
                 </motion.li>
                 <motion.li variants={itemVariants} className="text-lg py-1">
-                  <NavLink
-                    exact
-                    to="/academics/departments"
-                    className="text-sky-900 hover:text-sky-900 duration-500 block border-l-4 border-yellow-500 px-4 font-bold"
-                    onClick={closeNavBar}
-                  >
-                    Application Process
+                    <NavLink
+                  to="/academics/departments"
+                  className={({ isActive }) => 
+                    `text-sky-900 hover:text-sky-900 duration-500 block border-l-4 border-yellow-500 px-4 font-bold ${isActive ? 'active-link' : ''}`
+                  }
+                  onClick={closeNavBar}
+                >
+                  Application Process
                   </NavLink>
                 </motion.li>
 
