@@ -78,7 +78,7 @@ const NavBar = () => {
       <div className="py-4 md:px-10 px-2 relative flex justify-between items-center">
         <div className="text-white gap-3 font-bold text-2xl cursor-pointer flex items-center font-Poppins p-3 rounded-md">
           <div className="border border-gray-300 p-1 mr-[-30px] rounded-md flex items-center">
-            <img className="w-10 h-14" src="/ED DP.png" alt="" />
+            <img className="w-10 h-14" src="/ED DP.png" alt="Not Supported" />
             <span className="ml-3 font-1xl">
               Ed Educational <br /> Complex
             </span>
