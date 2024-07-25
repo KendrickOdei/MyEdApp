@@ -48,7 +48,7 @@ const DirectorsMesssage = () => {
       >
       <figure className="md:flex  p-8 md:p-0 bg-sky-900">
           
-          <motion.img className="w-72 h-44 md:w-full md:h-full md:mt-10 md:rounded-none  mx-auto object-contain ml-2" src="./src/assets/darkHero.jpeg" alt="" width="384" height="512"
+          <motion.img className="w-72 h-44 md:w-full md:h-full md:mt-10 md:rounded-none  mx-auto object-contain member " src="/darkHero.jpeg" alt="" width="384" height="512"
              initial={{ opacity: 0, x: 0, y: isMediumScreen ? 0 : isSmallScreen ? 50 : 0 }}
              animate={{ opacity: 1, x: 0, y: 0 }}
              transition={{
