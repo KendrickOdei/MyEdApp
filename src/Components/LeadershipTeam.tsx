@@ -15,19 +15,19 @@ export const LeadershipTeam: React.FC = () => {
   const members = [
     {
       name: 'Mr. Samuel Okine Doku',
-      imageUrl: './src/assets/darkHero.jpeg',
+      imageUrl: '/darkHero.jpeg',
       showDirectorMessage: true,
       title: "Director"
     },
     {
       name: 'Mr. Shadrach Simpson',
-      imageUrl: './src/assets/img2.JPG',
+      imageUrl: '/img2.JPG',
       showDirectorMessage: false,
       title: 'Administrator'
     },
     {
       name: 'Mr. Makafui Nukunu',
-      imageUrl: './src/assets/img3.JPG',
+      imageUrl: '/img3.JPG',
       showDirectorMessage: false,
       title:'Headmaster'
     },

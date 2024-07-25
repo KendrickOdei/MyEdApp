@@ -3,15 +3,15 @@ import { useState, useEffect } from 'react';
 const Hero = () => {
   const [slides] = useState([
     {
-      imageUrl: '/src/assets/img1.jpg',
+      imageUrl: '/img1.JPG',
       text: 'A TESTIMONY THAT OUR LORD IS GOD  ',
     },
     {
-      imageUrl: '/src/assets/img2.jpg',
+      imageUrl: '/img2.JPG',
       text: 'Education is the foundation upon which we build our future.',
     },
     {
-      imageUrl: '/src/assets/img3.jpg',
+      imageUrl: '/img3.JPG',
       text: 'Intelligence plus character - that is the goal of true education',
     },
     // Add more slides as needed
