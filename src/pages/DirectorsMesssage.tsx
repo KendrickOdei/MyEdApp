@@ -1,62 +1,24 @@
 
-import Director from '../Components/Director';
-import React, { useState,useEffect } from "react";
-import { NavLink } from "react-router-dom";
-import { motion } from "framer-motion";
-import { useMediaQuery } from '@material-ui/core';
+
+import  { useEffect } from "react";
+
+import { motion } from "framer-motion"
+import { useMediaQuery } from '@mui/material';
+
 
 
 const DirectorsMesssage = () => {
 
-  const [isOpen, setIsOpen] = useState(false);
-  const [aboutMenuOpen, setAboutMenuOpen] = useState(false);
-  const [academicsMenuOpen, setAcademicsMenuOpen] = useState(false);
-  const [admissionMenuOpen,setAdmissionsMenuOpen] = useState(false);
-  const [studentLifeMenuOpen,setStudentLifeMenuOpen] = useState(false);
-  const [contactMenuOpen,setContactMenuOpen] = useState(false)
+ 
 
-  const toggleNavBar = () => {
-    setIsOpen(!isOpen);
-  };
-  const toggleContactMenu = () =>{
-    setContactMenuOpen(!contactMenuOpen);
-  }
+  
+ 
 
-  const toggleAboutMenu = () => {
-   
-    setAboutMenuOpen(!aboutMenuOpen);
+  
 
-  };
+ 
 
-  const toggleAcademicMenu = () => {
-    setAcademicsMenuOpen(!academicsMenuOpen);
-    // Uncomment the line below if you want to close the main menu when toggling academicsMenuOpen
-    // setIsOpen(false);
-  };
-  const toggleAdmissionMenu = () =>{
-    setAdmissionsMenuOpen(!admissionMenuOpen);
-  }
-  const toggleStudentMenuOpen = () => {
-    setStudentLifeMenuOpen(!studentLifeMenuOpen)
-  }
-
-  const closeNavBar = () => {
-    setIsOpen(false);
-    setAboutMenuOpen(false); // Ensure to close submenu when closing navbar
-    setAcademicsMenuOpen(false);
-    setAdmissionsMenuOpen(false)
-    setStudentLifeMenuOpen(false)
-  };
-
-  const listVariants = {
-    open: { opacity: 1, },
-    closed: { opacity: 0 },
-  };
-
-  const itemVariants = {
-    open: { opacity: 1, x: 0 },
-    closed: { opacity: 0, x: -100 },
-  };
+ 
   useEffect(() => {
     window.scrollTo(0, 0); // Scrolls to the top when the component mounts
   }, []);
