@@ -1,5 +1,5 @@
 
-import NavBar from "./NavBar";
+
 
 const Hero = () => {
 
