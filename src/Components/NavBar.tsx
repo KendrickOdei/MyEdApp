@@ -1,6 +1,8 @@
+
 import  { useState,useEffect } from "react";
 import { NavLink } from "react-router-dom";
 import {  motion } from "framer-motion";
+
 
 const NavBar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -72,22 +74,40 @@ const NavBar = () => {
     window.scrollTo(0, 0); // Scrolls to the top when the component mounts
   }, []);
 
+  const [scrolled, setScrolled] = useState(false);
+
+  const handleScroll = () => {
+    if (window.scrollY > 50) { // Adjust scroll threshold as needed
+      setScrolled(true);
+    } else {
+      setScrolled(false);
+    }
+  };
+
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   return (
     <>
-     <div className="w-full fixed top-0 z-20 bg-sky-950 ">
-      <div className="py-4 md:px-10 px-2 relative flex justify-between items-center">
-        <div className="text-white gap-3 font-bold text-2xl cursor-pointer flex items-center font-Poppins p-3 rounded-md">
-          <div className="border border-gray-300 p-1 mr-[-30px] rounded-md flex items-center">
+    <nav className={`navBar fixed top-0 left-0 right-0 z-20 transition-all ${scrolled ? 'scroll-bg' : ''}`}>
+
+    <div className=" px-10 flex justify-between items-center">
+    <div className="py-1 top-o left-0 right-0  relative flex justify-between items-center ml-0 mr-0">
+       
+        <div className="text-white gap-3 font-bold text-xl ml-[-28px] cursor-pointer flex items-center font-Poppins p-3 rounded-md">
+          <div className=" p-1 left-0 rounded-md flex items-center border-container">
             <img className="w-10 h-14" src="/ED DP.png" alt="Not Supported" />
-            <span className="ml-3 font-1xl">
+            <span className="ml-3 flex md:text-xl ED-TEXT md:font-">
               Ed Educational <br /> Complex
             </span>
           </div>
         </div>
 
         {/* Navigation Links - visible on large screens */}
-        <ul className="hidden md:flex text-center space-x-2 md:mr-40">
-          <li className="text-xl mr-2 pb-3">
+        <ul className="hidden md:flex text-center space-x-2 md:mr-auto md:ml-auto md-list">
+          <li className="text-xl mr-2 pb-2">
             <NavLink
               
               to="/"
@@ -99,15 +119,15 @@ const NavBar = () => {
             </NavLink>
           </li>
           {/* About list on md screen */}
-          <li className="text-xl  pb-3 relative">
+          <li className="text-xl  pb-1 relative">
             <div className="flex items-center">
               <div
                 
-                className="text-white hover:text-gray-400 duration-500 relative flex items-center hover:decoration hover:underline  cursor-pointer md:border-r-2 md:border-red-600 md:px-2 gap-2 md:font-bold"
+                className="text-white hover:text-gray-400 duration-500 relative flex items-center hover:decoration hover:underline  cursor-pointer md:border-r-2 md:border-red-600 md:px-1 gap-1 md:font-bold"
                 
                 
                 onMouseEnter={toggleAboutMenu}
-                
+                onClick={toggleAboutMenu}
               >
                 <span >About Ed</span>
                 
@@ -268,7 +288,7 @@ const NavBar = () => {
             <NavLink
               
               to="/admission"
-              className="text-white hover:text-gray-400 duration-500 md:w-36 md:border-r-2 md:border-red-600 md:px-8 gap-2 md:font-bold"
+              className="text-white hover:text-gray-400 duration-500 md:w-36 md:border-r-2 md:border-red-600 md:px-2 gap-2 md:font-bold"
               
               onMouseEnter={toggleAdmissionMenu}
               onMouseLeave={handleAdmissionLeave}
@@ -450,7 +470,7 @@ const NavBar = () => {
         {/* Menu button (visible on mobile) */}
         <motion.button
           onClick={toggleNavBar}
-          className="text-white text-3xl absolute right-8 top-6 cursor-pointer mt-3 w-10 h-10 md:hidden z-50 font-Poppins font-bold"
+          className="text-white text-3xl  right-4 top-6 cursor-pointer mt-[4px] ml-[100px] w-10 h-10 md:hidden z-50 font-Poppins font-bold"
           animate={isOpen ? "open" : "closed"}
         >
           {!isOpen ? (
@@ -489,7 +509,7 @@ const NavBar = () => {
         animate={isOpen ? "open" : "closed"}
         className={`${
           isOpen ? "block" : "hidden"
-        } mt-4 md:hidden md:pb-0 pb-14 p-6 top-28 absolute left-0 w-full md:w-auto md:pl-0 pl-9 transition-all duration-700 ease-in-out gap-10 bg-[rgb(4,9,20)] cursor-pointer opacity-10`}
+        } mt-[-3px] md:hidden md:pb-0 pb-14 p-6 top-28 absolute left-0  md:w-auto md:pl-0 pl-9 transition-all duration-700 ease-in-out gap-10 bg-[rgb(4,9,20)] cursor-pointer opacity-10 w-full`}
         style={{ zIndex: isOpen ? "60" : "-1" }}
         transition={{delay:0.2,x:{type:"spring",stiffness:60,opacity:1,ease:"easeIn",duration:1}}}
         >
@@ -512,7 +532,7 @@ const NavBar = () => {
               <NavLink
                 
                 to=""
-                className="text-sky-950 nav-link hover:text-gray-400 duration-500 relative flex items-center font-bold text-xl font-Poppins bottom-b-4 border-red-600"
+                className="text-white nav-link hover:text-gray-400 duration-500 relative flex items-center font-bold text-xl font-Poppins bottom-b-4 border-red-600"
               
                 onClick={toggleAboutMenu}
                 
@@ -608,6 +628,7 @@ const NavBar = () => {
                 className="text-white nav-link hover:text-gray-400 duration-500 flex font-bold text-xl font-Poppins"
                 
                 onClick={toggleAcademicMenu}
+                onMouseDownCapture={toggleAcademicMenu}
                 
               >
                 <span>Academics</span>
@@ -1002,8 +1023,7 @@ const NavBar = () => {
 
       </div>
     </div>
-      
-
+    </nav>
     </>
   );
 };

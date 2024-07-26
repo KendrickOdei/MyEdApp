@@ -1,3 +1,4 @@
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -37,6 +38,9 @@
     margin-left: auto;
     margin-right: auto;
   }
+  .navBar{
+    height: 110px;
+  }
 }
 
 @media (max-width: 428px) and (max-height: 926px) {
@@ -44,14 +48,35 @@
     margin-left: auto;
     margin-right: auto;
   }
+  .navBar{
+    height: 110px;
+  }
+  
+}
+@media (max-width: 884px){
+  .member {
+    margin-left: auto;
+    margin-right: auto;
+    
+  }
+  .navBar{
+    height: 110px;
+  }
+  
+}
+/* Global styles or Tailwind custom CSS */
+body {
+  scroll-behavior: smooth;
 }
 
-/* In your CSS file or styled component */
-.nav-link {
-  transition: color 0.5s ease, transform 0.3s ease;
+.navBar {
+  transition: background-color 0.3s ease-in-out;
 }
 
-.nav-link:hover {
-  color: gray; /* Adjust color on hover */
-  transform: scale(1.1); /* Zoom effect on hover */
+.scroll-bg {
+  background-color: rgba(15, 23, 42, 1); /* Adjust color as needed */
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
 }
+
+/* Apply styles based on scroll position using JavaScript */
+

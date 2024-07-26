@@ -18,16 +18,17 @@ const Layouts: React.FC<Props> = ({ children }) => {
        
      
       <div className="container mx-auto py-10 flex-1 progress-bar" >{children}</div>
-    
-      
+      <div className="mt-32 ">
       <LeadershipTeam/>
+
+      </div>
+      
+      
       <div className="mt-16">
       <Director/>
       </div>
       
-      <Director/>
-      <Director/>
-      <Director/>
+      
      
       
       

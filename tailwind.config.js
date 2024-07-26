@@ -6,7 +6,12 @@ export default {
   ],
   theme: {
     extend: {
-    
+      screens: {
+        'sm': '884px', // Custom sm breakpoint starting at 884px
+        'md': '1024px', // Example: you can keep or adjust other breakpoints
+        'lg': '1280px',
+        'xl': '1536px',
+      },
     },
   },
   plugins: [],
