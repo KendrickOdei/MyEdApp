@@ -1,20 +1,22 @@
 import React, { useEffect, useState } from 'react';
-
+import './LoadingBar.css'; // Import the CSS for styling
 
 const LoadingBar: React.FC = () => {
-  const [isLoading, setIsLoading] = useState(true);
+  const [progress, setProgress] = useState(0);
 
   useEffect(() => {
-    // Simulate loading
-    const timer = setTimeout(() => {
-      setIsLoading(false);
-    }, 3000); // Adjust this duration to your needs
+    let timer: NodeJS.Timeout;
+    if (progress < 100) {
+      timer = setTimeout(() => {
+        setProgress((prev) => prev + 25); // Adjust step size as needed
+      }, 500); // Adjust timing for how fast the bar progresses
+    }
 
     return () => clearTimeout(timer);
-  }, []);
+  }, [progress]);
 
   return (
-    <div className={`loading-bar ${isLoading ? 'loading' : 'loaded'}`}></div>
+    <div className="loading-bar" style={{ transform: `scaleX(${progress / 100})` }}></div>
   );
 };
 
