@@ -2,22 +2,29 @@ import React, { useEffect, useState } from 'react';
 
 
 const LoadingBar: React.FC = () => {
-  const [isLoading, setIsLoading] = useState(true);
+  const [progress, setProgress] = useState(0);
 
   useEffect(() => {
-    const handleLoad = () => {
-      setIsLoading(false);
+    const updateProgress = () => {
+      if (progress < 100) {
+        setProgress((prev) => prev + 25); // Adjust step size
+      }
     };
 
-    window.addEventListener('load', handleLoad);
+    const timer = setInterval(updateProgress, 500); // Adjust interval for progress speed
 
-    return () => {
-      window.removeEventListener('load', handleLoad);
-    };
-  }, []);
+    return () => clearInterval(timer);
+  }, [progress]);
+
+  // Hide loading bar when progress reaches 100%
+  useEffect(() => {
+    if (progress >= 100) {
+      setTimeout(() => setProgress(0), 500); // Hide after reaching 100%
+    }
+  }, [progress]);
 
   return (
-    <div className={`loading-bar ${isLoading ? 'loading' : 'loaded'}`}></div>
+    <div className={`loading-bar ${progress >= 100 ? 'loaded' : 'loading'}`} style={{ transform: `scaleX(${progress / 100})` }}></div>
   );
 };
 
