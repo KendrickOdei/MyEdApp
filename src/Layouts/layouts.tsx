@@ -1,10 +1,9 @@
 import React from "react";
 
-
 import Director from "../Components/Director";
 
 import { LeadershipTeam } from "../Components/LeadershipTeam";
-
+import LoadingBar from "../Components/LoadingBar";
 
 interface Props {
   children: React.ReactNode;
@@ -14,8 +13,8 @@ const Layouts: React.FC<Props> = ({ children }) => {
 
  return (
     <div className="flex flex-col  bg-sky-900 min-h-screen ">
-     
-       
+     <LoadingBar/>
+
      
       <div className="container mx-auto py-10 flex-1 progress-bar" >{children}</div>
       <div className="mt-32 ">

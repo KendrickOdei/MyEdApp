@@ -1,4 +1,5 @@
 
+
 import  { useState,useEffect } from "react";
 import { NavLink } from "react-router-dom";
 import {  motion } from "framer-motion";
@@ -45,15 +46,7 @@ const NavBar = () => {
     setStudentLifeMenuOpen(false)
   };
 
-  const listVariants = {
-    open: { opacity: 1, },
-    closed: { opacity: 0 },
-  };
 
-  const itemVariants = {
-    open: { opacity: 1, x: 0,type:'spring',stiffness: 60, ease:'easeIn', duration:1 },
-    closed: { opacity: 0, x: -100 },
-  };
 
   const handleAboutLeave = () => {
     setAboutMenuOpen(false);
@@ -155,16 +148,15 @@ const NavBar = () => {
               </div>
             </div>
             {aboutMenuOpen && (
-              <motion.div
-                variants={listVariants}
-                initial="closed"
-                animate={aboutMenuOpen ? "open" : "closed"}
+              <div
+              
+               
                 className={`absolute top-8 left-0 mt-0 bg-white p-2 shadow-lg z-50 text-left ml-[-70px]  w-52 transform ${
                   aboutMenuOpen ? "translate-y-0 opacity-100" : "translate-y-[-10px] opacity-0"
                 }`}
                 onMouseLeave={handleAboutLeave}
               >
-                <motion.li variants={itemVariants} className="text-lg py-1">
+                <li className="text-lg py-1">
                   <NavLink
                     
                     to="/about/history"
@@ -175,8 +167,8 @@ const NavBar = () => {
                   >
                     History
                   </NavLink>
-                </motion.li>
-                <motion.li variants={itemVariants} className="text-lg py-1">
+                </li>
+                <li className="text-lg py-1">
                   <NavLink
                     
                     to="/about/mission"
@@ -186,8 +178,8 @@ const NavBar = () => {
                   >
                     Mission
                   </NavLink>
-                </motion.li>
-                <motion.li variants={itemVariants} className="text-lg py-1">
+                </li>
+                <li  className="text-lg py-1">
                   <NavLink
                 
                     to="/DirectorsMessage"
@@ -197,8 +189,8 @@ const NavBar = () => {
                   >
                     Director's message
                   </NavLink>
-                </motion.li>
-              </motion.div>
+                </li>
+              </div>
             )}
           </li>
           {/* Academics on md screen  */}
@@ -232,14 +224,13 @@ const NavBar = () => {
               </NavLink>
             </div>
             {academicsMenuOpen && (
-              <motion.div
-                variants={listVariants}
-                initial="closed"
-                animate="open"
+              <div
+            
+               
                 className="absolute  md:mr-4 mt-[0px] bg-white p-2 shadow-lg z-50 text-left"
                 onMouseLeave={handleAcademicsLeave}
               >
-                <motion.li variants={itemVariants} className="text-lg py-1">
+                <li className="text-lg py-1">
                   <NavLink
                     
                     to="/academics/programs"
@@ -248,8 +239,8 @@ const NavBar = () => {
                   >
                     Academic Programs
                   </NavLink>
-                </motion.li>
-                <motion.li variants={itemVariants} className="text-lg py-1">
+                </li>
+                <li  className="text-lg py-1">
                   <NavLink
                    
                     to="/academics/departments"
@@ -258,8 +249,8 @@ const NavBar = () => {
                   >
                     Departments
                   </NavLink>
-                </motion.li>
-                <motion.li variants={itemVariants} className="text-lg py-1">
+                </li>
+                <li  className="text-lg py-1">
                   <NavLink
                     
                     to="/academics/departments"
@@ -268,8 +259,8 @@ const NavBar = () => {
                   >
                     Curriculum
                   </NavLink>
-                </motion.li>
-                <motion.li variants={itemVariants} className="text-lg py-1">
+                </li>
+                <li  className="text-lg py-1">
                   <NavLink
                     
                     to="/academics/departments"
@@ -278,9 +269,9 @@ const NavBar = () => {
                   >
                     Grading System
                   </NavLink>
-                </motion.li>
+                </li>
 
-              </motion.div>
+              </div>
             )}
           </li>
           {/* Admission on md screen */}
@@ -300,14 +291,12 @@ const NavBar = () => {
 
             </NavLink>
             {admissionMenuOpen && (
-              <motion.div
-                variants={listVariants}
-                initial="closed"
-                animate="open"
+              <div
+                
                 className="absolute  md:mr-4 mt-[0px] bg-white p-2 shadow-lg z-50 text-left"
                 onMouseLeave={handleAdmissionLeave}
               >
-                <motion.li variants={itemVariants} className="text-lg py-1">
+                <li  className="text-lg py-1">
                   <NavLink
                     
                     to="/academics/programs"
@@ -316,8 +305,8 @@ const NavBar = () => {
                   >
                     Admission Requirements
                   </NavLink>
-                </motion.li>
-                <motion.li variants={itemVariants} className="text-lg py-1">
+                </li>
+                <li  className="text-lg py-1">
                   <NavLink
                     
                     to="/academics/departments"
@@ -326,8 +315,8 @@ const NavBar = () => {
                   >
                     Tuition and Fees
                   </NavLink>
-                </motion.li>
-                <motion.li variants={itemVariants} className="text-lg py-1">
+                </li>
+                <li  className="text-lg py-1">
                   <NavLink
                     
                     to="/academics/departments"
@@ -336,8 +325,8 @@ const NavBar = () => {
                   >
                     Scholarships and Financial Aid
                   </NavLink>
-                </motion.li>
-                <motion.li variants={itemVariants} className="text-lg py-1">
+                </li>
+                <li className="text-lg py-1">
                   <NavLink
                    
                     to="/academics/departments"
@@ -346,9 +335,9 @@ const NavBar = () => {
                   >
                     Application Process
                   </NavLink>
-                </motion.li>
+                </li>
 
-              </motion.div>
+              </div>
             )}
           </li>
           {/* Student life on md screen */}
@@ -365,14 +354,12 @@ const NavBar = () => {
      
             </NavLink>
             {studentLifeMenuOpen && (
-              <motion.div
-                variants={listVariants}
-                initial="closed"
-                animate="open"
+              <div
+                
                 className="absolute  md:mr-4 mt-[0px] bg-white p-2 shadow-lg z-50 text-left"
                 onMouseLeave={handleStudentLeave}
               >
-                <motion.li variants={itemVariants} className="text-lg py-1">
+                <li  className="text-lg py-1">
                   <NavLink
                    
                     to="/academics/programs"
@@ -381,8 +368,8 @@ const NavBar = () => {
                   >
                     Clubs and Organisation
                   </NavLink>
-                </motion.li>
-                <motion.li variants={itemVariants} className="text-lg py-1">
+                </li>
+                <li  className="text-lg py-1">
                   <NavLink
                     
                     to="/academics/departments"
@@ -391,8 +378,8 @@ const NavBar = () => {
                   >
                     Sports and Activities
                   </NavLink>
-                </motion.li>
-                <motion.li variants={itemVariants} className="text-lg py-1">
+                </li>
+                <li  className="text-lg py-1">
                   <NavLink
                     
                     to="/academics/departments"
@@ -401,8 +388,8 @@ const NavBar = () => {
                   >
                     Events and Competitions
                   </NavLink>
-                </motion.li>
-                <motion.li variants={itemVariants} className="text-lg py-1">
+                </li>
+                <li  className="text-lg py-1">
                   <NavLink
                     
                     to="/academics/departments"
@@ -411,9 +398,9 @@ const NavBar = () => {
                   >
                     Students Achievement
                   </NavLink>
-                </motion.li>
+                </li>
 
-              </motion.div>
+              </div>
             )}
           </li>
           {/* Contact menu on md screen */}
@@ -431,14 +418,12 @@ const NavBar = () => {
 
             </NavLink>
             {contactMenuOpen && (
-              <motion.div
-                variants={listVariants}
-                initial="closed"
-                animate="open"
+              <div
+                
                 className="absolute  md:mr-4 mt-[0px] bg-white p-2 shadow-lg z-50 text-left"
                 onMouseLeave={handleContactLeave}
               >
-                <motion.li variants={itemVariants} className="text-lg py-1">
+                <li  className="text-lg py-1">
                   <NavLink
                     
                     to="/academics/programs"
@@ -447,8 +432,8 @@ const NavBar = () => {
                   >
                     Location and Map
                   </NavLink>
-                </motion.li>
-                <motion.li variants={itemVariants} className="text-lg py-1">
+                </li>
+                <li  className="text-lg py-1">
                   <NavLink
                     
                     to="/academics/departments"
@@ -457,21 +442,21 @@ const NavBar = () => {
                   >
                     Feedback Form
                   </NavLink>
-                </motion.li>
+                </li>
               
                 
 
-              </motion.div>
+              </div>
             )}
           </li>
           
         </ul>
 
         {/* Menu button (visible on mobile) */}
-        <motion.button
+        <button
           onClick={toggleNavBar}
           className="text-white text-3xl  right-4 top-6 cursor-pointer mt-[4px] ml-[100px] w-10 h-10 md:hidden z-50 font-Poppins font-bold"
-          animate={isOpen ? "open" : "closed"}
+         
         >
           {!isOpen ? (
             <svg
@@ -500,21 +485,19 @@ const NavBar = () => {
               <path strokeLinecap="round" strokeLinejoin="round" d="M6 18 18 6M6 6l12 12" />
             </svg>
           )}
-        </motion.button>
+        </button>
 
         {/* Mobile Navigation Links */}
         <motion.ul
-        variants={listVariants}
-        initial="closed"
-        animate={isOpen ? "open" : "closed"}
+        
         className={`${
           isOpen ? "block" : "hidden"
-        } mt-[-3px] md:hidden md:pb-0 pb-14 p-6 top-28 absolute left-0  md:w-auto md:pl-0 pl-9 transition-all duration-700 ease-in-out gap-10 bg-[rgb(4,9,20)] cursor-pointer opacity-10 w-full`}
+        } mt-[-3px] md:hidden md:pb-0 pb-14 p-6 top-28 absolute left-0  md:w-auto md:pl-0 pl-9 transition-all duration-700 ease-in-out gap-10 bg-[rgb(4,9,20)] cursor-pointer  w-full`}
         style={{ zIndex: isOpen ? "60" : "-1" }}
-        transition={{delay:0.2,x:{type:"spring",stiffness:60,opacity:1,ease:"easeIn",duration:1}}}
+        
         >
           {/* Home */}
-          <motion.li variants={itemVariants} className="text-xl md:border-b md:border-gray-300 pb-3 cursor-pointer">
+          <li className="text-xl md:border-b md:border-gray-300 pb-3 cursor-pointer">
             <NavLink
               
               to="/"
@@ -525,9 +508,9 @@ const NavBar = () => {
             >
               Home
             </NavLink>
-          </motion.li>
+          </li>
           {/* About Ed */}
-          <motion.li variants={itemVariants} className="text-xl md:border-b md:border-gray-300 pb-3 relative">
+          <li  className="text-xl md:border-b md:border-gray-300 pb-3 relative">
             <div className="flex items-center">
               <NavLink
                 
@@ -575,14 +558,12 @@ const NavBar = () => {
               </NavLink>
             </div>
             {aboutMenuOpen && (
-              <motion.div
-                variants={listVariants}
-                initial="closed"
-                animate="open"
+              <div
+             
                 className="absolute top-30  mt-4 bg-sky-900  p-2  shadow-lg z-50  left-0 "
-                transition={{delay:0.2,x:{type:"spring",stiffness:60,opacity:1,ease:"easeIn",duration:1}}}
+                
               >
-                <motion.li variants={itemVariants} className="text-lg py-1">
+                <li  className="text-lg py-1">
                   <NavLink
                     
                     to="/about/mission"
@@ -592,8 +573,8 @@ const NavBar = () => {
                   >
                     Mission and Vision
                   </NavLink>
-                </motion.li>
-                <motion.li variants={itemVariants} className="text-lg py-1">
+                </li>
+                <li  className="text-lg py-1">
                   <NavLink
                     
                     to="/about/history"
@@ -603,24 +584,25 @@ const NavBar = () => {
                   >
                     History
                   </NavLink>
-                </motion.li>
-                <motion.li variants={itemVariants} className="text-lg py-1">
+                </li>
+                <li  className="text-lg py-1">
                   <NavLink
                     
                     to="/DirectorsMessage"
                     className="text-white hover:text-gray-400 duration-500 block font-bold text-xl font-Poppins border-l-4 border-yellow-500 px-4"
                     onClick={closeNavBar}
                     
+                    
                   >
                    Director's message
                   </NavLink>
-                </motion.li>
-              </motion.div>
+                </li>
+              </div>
             )}
-          </motion.li>
+          </li>
        {/* Academics */}
       {/* Academics */}
-      <motion.li variants={itemVariants} className="text-xl md:border-b md:border-gray-300 pb-3 cursor-pointer">
+      <li className="text-xl md:border-b md:border-gray-300 pb-3 cursor-pointer">
             <div className="flex items-center">
               <NavLink
                 
@@ -668,15 +650,13 @@ const NavBar = () => {
               </NavLink>
             </div>
             {academicsMenuOpen && (
-              <motion.div
-                variants={listVariants}
-                initial="closed"
-                animate="open"
+              <div
+                
                 className="absolute top-30  mt-2 bg-sky-900 p-2 rounded-md shadow-lg z-50 w-full left-0"
-                transition={{delay:0.2,x:{type:"spring",stiffness:60,opacity:1,ease:"easeIn",duration:1}}}
+                
                 
               >
-                <motion.li variants={itemVariants} className="text-lg py-1">
+                <li  className="text-lg py-1">
                   <NavLink
                     
                     to="/academics/programs"
@@ -686,8 +666,8 @@ const NavBar = () => {
                   >
                     Academic Programs
                   </NavLink>
-                </motion.li>
-                <motion.li variants={itemVariants} className="text-lg py-1">
+                </li>
+                <li  className="text-lg py-1">
                   <NavLink
                     
                     to="/academics/departments"
@@ -697,8 +677,8 @@ const NavBar = () => {
                   >
                     Departments
                   </NavLink>
-                </motion.li>
-                <motion.li variants={itemVariants} className="text-lg py-1">
+                </li>
+                <li  className="text-lg py-1">
                   <NavLink
                     
                     to="/academics/curriculum"
@@ -708,8 +688,8 @@ const NavBar = () => {
                   >
                     Curriculum
                   </NavLink>
-                </motion.li>
-                <motion.li variants={itemVariants} className="text-lg py-1">
+                </li>
+                <li  className="text-lg py-1">
                   <NavLink
                     
                     to="/academics/grading"
@@ -719,12 +699,12 @@ const NavBar = () => {
                   >
                     Grading System
                   </NavLink>
-                </motion.li>
-              </motion.div>
+                </li>
+              </div>
             )}
-          </motion.li>
+          </li>
           {/* Admissions */}
-          <motion.li variants={itemVariants} className="text-xl md:border-b md:border-gray-300 pb-3 cursor-pointer">
+          <li  className="text-xl md:border-b md:border-gray-300 pb-3 cursor-pointer">
             <div className="flex items-center">
               <NavLink
                 
@@ -771,14 +751,12 @@ const NavBar = () => {
               </NavLink>
             </div>
             {admissionMenuOpen && (
-              <motion.div
-                variants={listVariants}
-                initial="closed"
-                animate="open"
+              <div
+                
                 className="absolute top-30 left-0 mt-2 bg-sky-900 p-2 rounded-md shadow-lg z-50 w-full"
-                transition={{delay:0.2,x:{type:"spring",stiffness:60,opacity:1,ease:"easeIn",duration:1}}}
+                
               >
-                <motion.li variants={itemVariants} className="text-lg py-1">
+                <li  className="text-lg py-1">
                   <NavLink
                     
                     to="/admission/requirements"
@@ -788,8 +766,8 @@ const NavBar = () => {
                   >
                    Admission Requirements
                   </NavLink>
-                </motion.li>
-                <motion.li variants={itemVariants} className="text-lg py-1">
+                </li>
+                <li  className="text-lg py-1">
                   <NavLink
                    
                     to="/admission/tuition"
@@ -799,8 +777,8 @@ const NavBar = () => {
                   >
                     Tuition and Fees
                   </NavLink>
-                </motion.li>
-                <motion.li variants={itemVariants} className="text-lg py-1">
+                </li>
+                <li className="text-lg py-1">
                   <NavLink
                     
                     to="/admission/Scholarships"
@@ -810,8 +788,8 @@ const NavBar = () => {
                   >
                     Scholarships and Financial Aid
                   </NavLink>
-                </motion.li>
-                <motion.li variants={itemVariants} className="text-lg py-1">
+                </li>
+                <li  className="text-lg py-1">
                   <NavLink
                     
                     to="/admission/application"
@@ -821,13 +799,13 @@ const NavBar = () => {
                   >
                     Application Process
                   </NavLink>
-                </motion.li>
-              </motion.div>
+                </li>
+              </div>
             )}
-          </motion.li>
+          </li>
           {/* Students life */}
           
-          <motion.li variants={itemVariants} className="text-xl md:border-b md:border-gray-300 pb-3 cursor-pointer">
+          <li  className="text-xl md:border-b md:border-gray-300 pb-3 cursor-pointer">
             <div className="flex items-center">
               <NavLink
                 
@@ -874,14 +852,12 @@ const NavBar = () => {
               </NavLink>
             </div>
             {studentLifeMenuOpen && (
-              <motion.div
-                variants={listVariants}
-                initial="closed"
-                animate="open"
+              <div
+               
                 className="absolute top-30 left-0 mt-2 bg-sky-900 p-2 rounded-md shadow-lg z-50 w-full"
-                transition={{delay:0.2,x:{type:"spring",stiffness:60,opacity:1,ease:"easeIn",duration:1}}}
+            
               >
-                <motion.li variants={itemVariants} className="text-lg py-1">
+                <li  className="text-lg py-1">
                   <NavLink
                     
                     to="/admission/requirements"
@@ -891,8 +867,8 @@ const NavBar = () => {
                   >
                    Clubs and Organization
                   </NavLink>
-                </motion.li>
-                <motion.li variants={itemVariants} className="text-lg py-1">
+                </li>
+                <li  className="text-lg py-1">
                   <NavLink
                     
                     to="/admission/tuition"
@@ -902,8 +878,8 @@ const NavBar = () => {
                   >
                     Sports & Activities
                   </NavLink>
-                </motion.li>
-                <motion.li variants={itemVariants} className="text-lg py-1">
+                </li>
+                <li  className="text-lg py-1">
                   <NavLink
                     
                     to="/admission/Scholarships"
@@ -913,8 +889,8 @@ const NavBar = () => {
                   >
                     Events and Competitions
                   </NavLink>
-                </motion.li>
-                <motion.li variants={itemVariants} className="text-lg py-1">
+                </li>
+                <li  className="text-lg py-1">
                   <NavLink
                     
                     to="/admission/application"
@@ -924,14 +900,14 @@ const NavBar = () => {
                   >
                     Student Achievements
                   </NavLink>
-                </motion.li>
-              </motion.div>
+                </li>
+              </div>
             )}
-          </motion.li>
+          </li>
           {/* Contacts menu */}
           
 
-          <motion.li variants={itemVariants} className="text-xl md:border-b md:border-gray-300 pb-3 cursor-pointer">
+          <li  className="text-xl md:border-b md:border-gray-300 pb-3 cursor-pointer">
             <div className="flex items-center">
               <NavLink
                 
@@ -979,13 +955,11 @@ const NavBar = () => {
             </div>
             {contactMenuOpen && (
               <motion.div
-                variants={listVariants}
-                initial="closed"
-                animate="open"
+                
                 className="absolute top-30 left-0 mt-2 bg-sky-900 p-2 rounded-md shadow-lg z-50 w-full"
-                transition={{delay:0.2,x:{type:"spring",stiffness:60,opacity:1,ease:"easeIn",duration:1}}}
+               
               >
-                <motion.li variants={itemVariants} className="text-lg py-1">
+                <li  className="text-lg py-1">
                   <NavLink
                     
                     to="/admission/requirements"
@@ -995,8 +969,8 @@ const NavBar = () => {
                   >
                    Location and map
                   </NavLink>
-                </motion.li>
-                <motion.li variants={itemVariants} className="text-lg py-1">
+                </li>
+                <li  className="text-lg py-1">
                   <NavLink
                    
                     to="/admission/tuition"
@@ -1006,12 +980,12 @@ const NavBar = () => {
                   >
                     Feedback form
                   </NavLink>
-                </motion.li>
+                </li>
                 
                 
               </motion.div>
             )}
-          </motion.li>
+          </li>
           
     </motion.ul>
    

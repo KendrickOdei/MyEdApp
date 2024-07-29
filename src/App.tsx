@@ -1,5 +1,5 @@
 
-import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Navigate, } from 'react-router-dom';
 import Layout from './Layouts/layouts';
 import NavBar from '../src/Components/NavBar';
 import Hero from '../src/Components/hero'; // Adjusted filename assuming correct case
@@ -16,22 +16,33 @@ import './Components/header.css';
 import './index.css';
 
 
+
+
+
+
 function App() {
+
+  
+ 
   return (
     
     <Router>
-      <NavBar/>
+    
+    <NavBar />
+   
+    
       <Routes>
         <Route path="/" element={<Layout><Hero /></Layout>} />
-        <Route path="/DirectorsMessage" element={<DirectorsMesssage />}/>
+        <Route path="/DirectorsMessage" element={<DirectorsMesssage />} />
         <Route path="/preschool" element={<Preschool />} />
         <Route path="/jhs" element={<Jhs />} />
         <Route path="/Services" element={<Layout><Services /></Layout>} />
         <Route path="/contact" element={<Layout><Contact /></Layout>} />
         <Route path="*" element={<Navigate to="/" />} />
       </Routes>
-      <Footer />
-    </Router>
+    
+    <Footer />
+  </Router>
   );
 }
 

@@ -4,12 +4,13 @@ import  { useEffect } from "react";
 
 import { motion } from "framer-motion"
 import { useMediaQuery } from '@mui/material';
-
+import LoadingBar from "../Components/LoadingBar";
 
 
 const DirectorsMesssage = () => {
 
  
+
 
   
  
@@ -27,7 +28,9 @@ const DirectorsMesssage = () => {
   const isSmallScreen = useMediaQuery('(max-width: 767px)');
   
   return (
+    <>
     
+    <LoadingBar/>
 
 
      
@@ -93,7 +96,7 @@ const DirectorsMesssage = () => {
       
         
     </div>
-
+    </>
 
 
     
