@@ -4,18 +4,10 @@ import  { useEffect } from "react";
 
 import { motion } from "framer-motion"
 import { useMediaQuery } from '@mui/material';
-import LoadingBar from "../Components/LoadingBar";
+
 
 
 const DirectorsMesssage = () => {
-
- 
-
-
-  
- 
-
-  
 
  
 
@@ -30,19 +22,33 @@ const DirectorsMesssage = () => {
   return (
     <>
     
-    <LoadingBar/>
+    
 
 
      
      
     
 
-    <div className='bg-white mt-[145px] p-2  w-full'>
+    <motion.div className='bg-white mt-[145px] p-2  w-full'
+     initial = {{opacity: 0}}
+     animate= {{opacity: 1}}
+     exit={{opacity:0}}
+     transition={{duration:2}}
+    >
+      <div className="object-cover">
+        <img src="/darkHero.jpeg" alt="" 
+        className="w-full h-full object-cover inset-0 mt-[-150px]"
+        />
 
-      <div className='ml-4'>
-      <h1 className='text-2xl text-sky-900 font-bold font-poppins  border-l-4 border-red-700 py-6 p-3'>
+        <h1 className='text-2xl text-sky-900 font-bold font-poppins  border-l-4 border-red-700 py-6 p-3 mt-[-20px]'>
             Message from our Director
         </h1>
+      </div>
+
+
+
+      <div className='ml-4'>
+      
 
       </div>
       {/* Director message */}
@@ -50,19 +56,7 @@ const DirectorsMesssage = () => {
       
       >
       <figure className="md:flex  p-8 md:p-0 bg-sky-900">
-          
-          <motion.img className="w-72 h-44 md:w-full md:h-full md:mt-10 md:rounded-none  mx-auto object-contain member " src="/darkHero.jpeg" alt="" width="384" height="512"
-             initial={{ opacity: 0, x: 0, y: isMediumScreen ? 0 : isSmallScreen ? 50 : 0 }}
-             animate={{ opacity: 1, x: 0, y: 0 }}
-             transition={{
-               delay: 0.2,
-               x: { type: "spring", stiffness: 60 },
-               y: { type: "spring", stiffness: 60 },
-               opacity: { duration: 1, ease: "easeIn" }
-             }}
-                />
-          
-               
+             
           <div className="pt-6 md:p-8 text-center md:text-left space-y-4 md:ml-20">
           <blockquote className="text-white text-lg font-medium md:text-left text-left">
                   <motion.p
@@ -95,7 +89,7 @@ const DirectorsMesssage = () => {
       </div>
       
         
-    </div>
+    </motion.div>
     </>
 
 

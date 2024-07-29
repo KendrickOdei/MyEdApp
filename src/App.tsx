@@ -1,5 +1,5 @@
-
-import { BrowserRouter as Router, Routes, Route, Navigate, } from 'react-router-dom';
+import { useState,useEffect, } from 'react';
+import { BrowserRouter as Router, Routes, Route, Navigate, useLocation, } from 'react-router-dom';
 import Layout from './Layouts/layouts';
 import NavBar from '../src/Components/NavBar';
 import Hero from '../src/Components/hero'; // Adjusted filename assuming correct case
@@ -14,23 +14,30 @@ import DirectorsMesssage from './pages/DirectorsMesssage';
 import './App.css';
 import './Components/header.css';
 import './index.css';
+import CustomLoadingBar from './Components/CustomLoadingBar';
 
 
 
 
 
+const App: React.FC = () => {
+  const location = useLocation();
+  const [loading, setLoading] = useState(false);
 
-function App() {
+  useEffect(() => {
+    // Start loading when location changes
+    setLoading(true);
+    const timer = setTimeout(() => {
+      setLoading(false);
+    }, 1000); // Adjust this duration to match your loading needs
 
-  
- 
+    return () => clearTimeout(timer);
+  }, [location]);
+
   return (
-    
-    <Router>
-    
-    <NavBar />
-   
-    
+    <div>
+      {loading && <CustomLoadingBar duration={1000} />}
+      <NavBar />
       <Routes>
         <Route path="/" element={<Layout><Hero /></Layout>} />
         <Route path="/DirectorsMessage" element={<DirectorsMesssage />} />
@@ -40,10 +47,8 @@ function App() {
         <Route path="/contact" element={<Layout><Contact /></Layout>} />
         <Route path="*" element={<Navigate to="/" />} />
       </Routes>
-    
-    <Footer />
-  </Router>
+      <Footer />
+    </div>
   );
-}
-
+};
 export default App;

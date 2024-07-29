@@ -1,5 +1,9 @@
 import { useState } from 'react';
 import { NavLink } from 'react-router-dom';
+import { motion } from 'framer-motion';
+
+
+
 
 export const LeadershipTeam: React.FC = () => {
   const [currentMember, setCurrentMember] = useState(0); // 0 for Mr. Samuel Okine Doku, 1 for Mr. S, 2 for Mr. M
@@ -34,7 +38,16 @@ export const LeadershipTeam: React.FC = () => {
   ];
 
   return (
-    <div
+    <motion.div
+    initial={{ y: 50, opacity: 0 }}
+    whileInView={{ y: 0, opacity: 1 }}
+    transition={{
+      delay: 0.1,
+      x: { type: "inertia", velocity: 10, stiffness: 60 },
+      opacity: { duration: 1, ease: "easeIn" },
+      duration: 0.5
+    }}
+    viewport={{ once: true }}
   className="sm:ml-8 sm:mr-8 ml-4 mr-4 relative mt-[-40px] bg-[rgb(4,9,20)] h-[480px] sm:h-[590px]"
   style={{ backgroundImage: `url(/src/assets/ED DP.png)` }}
 >
@@ -160,7 +173,7 @@ export const LeadershipTeam: React.FC = () => {
       </div>
     ))}
   </div>
-</div>
+</motion.div>
 
   );
 }
