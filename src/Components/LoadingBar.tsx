@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import './LoadingBar.css'; // Import the CSS for styling
+
 
 const LoadingBar: React.FC = () => {
   const [progress, setProgress] = useState(0);
