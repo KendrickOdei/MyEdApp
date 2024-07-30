@@ -16,8 +16,8 @@ const DirectorsMesssage = () => {
     window.scrollTo(0, 0); // Scrolls to the top when the component mounts
   }, []);
   
-  const isMediumScreen = useMediaQuery('(min-width: 768px)');
-  const isSmallScreen = useMediaQuery('(max-width: 767px)');
+  const isMediumScreen = useMediaQuery('(min-width: 1024px)');
+  const isSmallScreen = useMediaQuery('(max-width: 884px)');
   
   return (
     <>

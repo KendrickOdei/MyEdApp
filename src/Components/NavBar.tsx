@@ -66,6 +66,8 @@ const NavBar = () => {
   useEffect(() => {
     window.scrollTo(0, 0); // Scrolls to the top when the component mounts
   }, []);
+ 
+  
 
   const [scrolled, setScrolled] = useState(false);
 
@@ -86,14 +88,14 @@ const NavBar = () => {
     <>
     <nav className={`navBar fixed top-0 left-0 right-0 z-20 transition-all ${scrolled ? 'scroll-bg' : ''}`}>
 
-    <div className=" px-10 flex justify-between items-center">
-    <div className="py-1 top-o left-0 right-0  relative flex justify-between items-center ml-0 mr-0">
+    <div className="py-1 md:px-10 px-2 relative flex justify-between items-center ">
+    
        
         <div className="text-white gap-3 font-bold text-xl ml-[-28px] cursor-pointer flex items-center font-Poppins p-3 rounded-md">
-          <div className=" p-1 left-0 rounded-md flex items-center border-container">
+          <div className=" p-1 left-0 rounded-md flex items-center border-container ml-4">
             <img className="w-10 h-14" src="/ED DP.png" alt="Not Supported" />
             <span className="ml-3 flex md:text-xl ED-TEXT md:font-">
-              Ed Educational <br /> Complex
+              Ed <br /> Educational <br /> Complex
             </span>
           </div>
         </div>
@@ -104,7 +106,7 @@ const NavBar = () => {
             <NavLink
               
               to="/"
-              className="text-white hover:text-gray-400 duration-500 md:border-r-2 md:border-red-600 md:px-2 md:font-bold"
+              className="text-white hover:text-gray-400 duration-500 md:border-r-4 md:border-red-600 md:px-2 md:font-bold"
               
               onClick={closeNavBar}
             >
@@ -116,7 +118,7 @@ const NavBar = () => {
             <div className="flex items-center">
               <div
                 
-                className="text-white hover:text-gray-400 duration-500 relative flex items-center hover:decoration hover:underline  cursor-pointer md:border-r-2 md:border-red-600 md:px-1 gap-1 md:font-bold"
+                className="text-white hover:text-gray-400 duration-500 relative flex items-center hover:decoration hover:underline  cursor-pointer md:border-r-4 md:border-red-600 md:px-1 gap-1 md:font-bold"
                 
                 
                 onMouseEnter={toggleAboutMenu}
@@ -199,7 +201,7 @@ const NavBar = () => {
               <NavLink
                 
                 to="/academics"
-                className="text-white hover:text-gray-400 duration-500 relative flex items-center md:border-r-2 md:border-red-600 md:px-2 gap-2 md:font-bold"
+                className="text-white hover:text-gray-400 duration-500 relative flex items-center md:border-r-4 md:border-red-600 md:px-2 gap-2 md:font-bold"
                
                 onMouseEnter={toggleAcademicMenu}
                 onMouseLeave={handleAcademicsLeave}
@@ -279,7 +281,7 @@ const NavBar = () => {
             <NavLink
               
               to="/admission"
-              className="text-white hover:text-gray-400 duration-500 md:w-36 md:border-r-2 md:border-red-600 md:px-2 gap-2 md:font-bold"
+              className="text-white hover:text-gray-400 duration-500 md:w-36 md:border-r-4 md:border-red-600 md:px-2 gap-2 md:font-bold"
               
               onMouseEnter={toggleAdmissionMenu}
               onMouseLeave={handleAdmissionLeave}
@@ -345,7 +347,7 @@ const NavBar = () => {
             <NavLink
               
               to="/admission"
-              className="text-white hover:text-gray-400 duration-500 md:w-36 md:border-r-2 md:border-red-600 md:px-2 gap-2 px-4 md:font-bold"
+              className="text-white hover:text-gray-400 duration-500 md:w-36 md:border-r-4 md:border-red-600 md:px-2 gap-2 px-4 md:font-bold"
               
               onMouseEnter={toggleStudentMenuOpen}
               onMouseLeave={handleStudentLeave}
@@ -455,24 +457,14 @@ const NavBar = () => {
         {/* Menu button (visible on mobile) */}
         <button
           onClick={toggleNavBar}
-          className="text-white text-3xl  right-4 top-6 cursor-pointer mt-[4px] ml-[100px] w-10 h-10 md:hidden z-50 font-Poppins font-bold"
+          className="text-white text-4xl mr-4 right-4 top-6 cursor-pointer mt-[4px]  w-10 h-10 md:hidden z-50 font-Poppins font-bold"
          
         >
           {!isOpen ? (
-            <svg
-              fill="none"
-              strokeWidth="1.5"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-              xmlns="http://www.w3.org/2000/svg"
-              aria-hidden="true"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="M3.75 5.25h16.5m-16.5 4.5h16.5m-16.5 4.5h16.5m-16.5 4.5h16.5"
-              ></path>
-            </svg>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="size-12">
+            <path fill-rule="evenodd" d="M3 9a.75.75 0 0 1 .75-.75h16.5a.75.75 0 0 1 0 1.5H3.75A.75.75 0 0 1 3 9Zm0 6.75a.75.75 0 0 1 .75-.75h16.5a.75.75 0 0 1 0 1.5H3.75a.75.75 0 0 1-.75-.75Z" clip-rule="evenodd" />
+          </svg>
+          
           ) : (
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -996,7 +988,7 @@ const NavBar = () => {
         
 
       </div>
-    </div>
+    
     </nav>
     </>
   );

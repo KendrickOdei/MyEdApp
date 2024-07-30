@@ -9,8 +9,8 @@ interface NewsItemProps {
 }
 
 const NewsItem: React.FC<NewsItemProps> = ({ title, date, description }) => (
-  <div className="mb-6 p-4 border border-gray-200  bg-white">
-     <div className="border-l-4 border-[#A42254] p-2">
+  <div className="mb-6 p-4 border border-gray-200  bg-white h-96 mr-4 " >
+     <div className="border-l-4 border-[#A42254] p-2 mt-12" >
     <h2 className="text-sky-900 text-xl font-bold mb-2">{title}</h2>
     <p className="text-red-600 mb-2 font-bold">{date}</p>
     <p className="text-sky-900">{description}</p>
@@ -32,7 +32,7 @@ const NewsSection: React.FC = () => {
   ];
 
   return (
-    <motion.section className="p-6  md:ml-6 md:mr-6 mr-4 ml-4 bg-[#040F26] " 
+    <motion.section className="p-6  md:ml-6 md:mr-6 mr-4 ml-4 bg-[#040F26] shadow-harvard-dark" 
     initial={{ y: 50, opacity: 0 }}
         whileInView={{ y: 0, opacity: 1 }}
         transition={{
@@ -61,19 +61,19 @@ const NewsSection: React.FC = () => {
       ))}
       </div>
       
-      <div>
-      
-      
-        <img className='w-full' src="/darkHero.jpeg" alt="" />
-        <NavLink 
-        to='/DirectorsMessage'
-        className="flex gap-2 mt-8 mx-auto bg-[#3D2252] text-white text-center py-2 px-4  shadow-md hover:bg-[#5b3d6b] transition-colors duration-300 "
-      >
+      <div className=' w-full h-full  ' >
+
+      <div className='w-full items-center justify-center  object-cover h-full bg-no-repeat 'style={{backgroundImage:`url(/darkHero.jpeg)`}}>
         
-        <span className='font-bold font-Poppins text-xl ml-2'>
+      <NavLink 
+        to='/DirectorsMessage'
+        
+      >
+        <div className="flex  mt-8 mx-auto  text-white text-center py-2 px-4  shadow-md transition-colors duration-300 ">
+        <span className='font-bold font-Poppins text-2xl ml-2 flex gap-4 px-4 mt-[300px]  py-4 md:text-2xl '>
         More Details
-        </span>
-        <span className='font-bold text-2xl p-1 bg-red-500 rounded-full'>
+        
+        <span className='bg-red-500 rounded-full p-1 text-2xl hover:bg-pink-700'>
         <svg 
             xmlns="http://www.w3.org/2000/svg" 
             fill="none" 
@@ -90,8 +90,20 @@ const NewsSection: React.FC = () => {
           </svg>
 
         </span>
+       
+        </span>
+        
+
+        </div>
+        
+        
       
       </NavLink>
+
+        
+      </div>
+      
+      
       </div>
       </div>
       

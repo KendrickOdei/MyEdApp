@@ -151,8 +151,8 @@ export const LeadershipTeam: React.FC = () => {
             to='/DirectorsMessage'
             className="flex absolute bottom-0 left-1/2 transform -translate-x-1/2 bg-[#3D2252] text-white p-2 w-full shadow-md cursor-pointer gap-4"
           >
-            <span className="text-xl">Read our Director's message</span>
-            <div className='text-4xl font-bold p-2'>
+            <span className="text-xl">Read more</span>
+            <div className='text-2xl font-bold p-1 bg-red-500 rounded-full'>
               <svg 
                 xmlns="http://www.w3.org/2000/svg" 
                 fill="none" 

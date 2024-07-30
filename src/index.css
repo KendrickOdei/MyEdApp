@@ -102,3 +102,30 @@ body {
   z-index: 9999; /* Ensure it’s above other content */
 }
 /* news section */
+/* Add this to your styles.css or a similar CSS file */
+
+@keyframes fadeInSlideIn {
+  0% {
+    opacity: 0;
+    transform: translateX(-50%);
+  }
+  50% {
+    opacity: 0.5;
+    transform: translateX(-25%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.fade-in-slide-in {
+  animation: fadeInSlideIn 2s ease-in-out;
+  line-height: 2;
+}
+
+@media(max-height: 1104){
+  .tablet{
+    line-height: 4;
+  }
+}
