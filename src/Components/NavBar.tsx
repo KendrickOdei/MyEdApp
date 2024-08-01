@@ -86,9 +86,9 @@ const NavBar = () => {
 
   return (
     <>
-    <nav className={`navBar fixed top-0 left-0 right-0 z-20 transition-all ${scrolled ? 'scroll-bg' : ''}`}>
+    <nav className={` navBar fixed top-0 left-0 right-0 z-50 transition-all ${scrolled ? 'scroll-bg' : ''}`}>
 
-    <div className="py-1 md:px-10 px-2 relative flex justify-between items-center ">
+    <div className="py-1 md:px-10 px-2 relative flex justify-between items-center  ">
     
        
         <div className="text-white gap-3 font-bold text-xl ml-[-28px] cursor-pointer flex items-center font-Poppins p-3 rounded-md">
@@ -990,6 +990,7 @@ const NavBar = () => {
       </div>
     
     </nav>
+    
     </>
   );
 };

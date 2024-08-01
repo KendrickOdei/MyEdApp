@@ -12,10 +12,10 @@ interface Props {
 const Layouts: React.FC<Props> = ({ children }) => {
 
  return (
-    <div className="flex flex-col  bg-sky-900 min-h-screen ">
+    <div className="  bg-sky-900 min-h-screen ">
      
-
-     
+      
+      
       <div className="container mx-auto py-10 flex-1 progress-bar" >{children}</div>
       
       <NewsSection/>

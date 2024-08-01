@@ -61,7 +61,7 @@ const NewsSection: React.FC = () => {
       ))}
       </div>
       
-      <div className=' w-full h-full  ' >
+      
 
       <div className='w-full items-center justify-center  object-cover h-full bg-no-repeat 'style={{backgroundImage:`url(/darkHero.jpeg)`}}>
         
@@ -105,7 +105,7 @@ const NewsSection: React.FC = () => {
       
       
       </div>
-      </div>
+      
       
       
     </motion.section>

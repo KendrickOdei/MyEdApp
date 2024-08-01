@@ -29,18 +29,13 @@ const DirectorsMesssage = () => {
      
     
 
-    <motion.div className='bg-white mt-[145px] p-2  w-full'
-     initial = {{opacity: 0}}
-     animate= {{opacity: 1}}
-     exit={{opacity:0}}
-     transition={{duration:2}}
-    >
-      <div className="object-cover">
+  
+      <div className="object-cover ">
         <img src="/darkHero.jpeg" alt="" 
-        className="w-full h-full object-cover inset-0 mt-[-150px]"
+        className="w-full h-full object-cover inset-0 mt-[-150px] min-h-screen"
         />
 
-        <h1 className='text-2xl text-sky-900 font-bold font-poppins  border-l-4 border-red-700 py-6 p-3 mt-[-20px]'>
+        <h1 className='text-2xl text-sky-900 font-bold font-poppins  border-l-4 border-red-700 py-6 p-3 mt-[-20px] ml-4'>
             Message from our Director
         </h1>
       </div>
@@ -89,7 +84,7 @@ const DirectorsMesssage = () => {
       </div>
       
         
-    </motion.div>
+  
     </>
 
 
