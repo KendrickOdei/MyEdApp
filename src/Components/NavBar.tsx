@@ -86,9 +86,9 @@ const NavBar = () => {
 
   return (
     <>
-    <nav className={` navBar fixed top-0 left-0 right-0 z-50 transition-all ${scrolled ? 'scroll-bg' : ''}`}>
+    <nav className={`w-full navBar fixed top-0 left-0 right-0 z-50 transition-all ${scrolled ? 'scroll-bg' : ''}`}>
 
-    <div className="py-1 md:px-10 px-2 relative flex justify-between items-center  ">
+    <div className="py-1 md:px-10 px-2 relative flex justify-between items-center  w-full">
     
        
         <div className="text-white gap-3 font-bold text-xl ml-[-28px] cursor-pointer flex items-center font-Poppins p-3 rounded-md">
@@ -483,9 +483,12 @@ const NavBar = () => {
         <motion.ul
         
         className={`${
-          isOpen ? "block" : "hidden"
-        } mt-[-3px] md:hidden md:pb-0 pb-14 p-6 top-28 absolute left-0  md:w-auto md:pl-0 pl-9 transition-all duration-700 ease-in-out gap-10 bg-[rgb(4,9,20)] cursor-pointer  w-full`}
+          isOpen ? "translate-x-0 opacity-100" : "translate-x-full opacity-0"
+        } md:hidden md:pb-0 pb-14 p-6 top-[105px] absolute py-8 right-0 md:w-auto md:pl-0 pl-9 transition-transform duration-700 ease-in-out gap-10 bg-[rgb(4,9,20)] cursor-pointer w-full overflow-hidden z-50`}
         style={{ zIndex: isOpen ? "60" : "-1" }}
+        initial={{ opacity: 0, x: '100%' }}
+        animate={{ opacity: isOpen ? 1 : 0, x: isOpen ? '0%' : '100%' }}
+        transition={{ duration: 0.1 }}
         
         >
           {/* Home */}
@@ -502,12 +505,12 @@ const NavBar = () => {
             </NavLink>
           </li>
           {/* About Ed */}
-          <li  className="text-xl md:border-b md:border-gray-300 pb-3 relative">
+          <li  className="text-xl md:border-b md:border-gray-300 pb-3 relative ">
             <div className="flex items-center">
               <NavLink
                 
                 to=""
-                className="text-white nav-link hover:text-gray-400 duration-500 relative flex items-center font-bold text-xl font-Poppins bottom-b-4 border-red-600"
+                className="text-white  nav-link hover:text-gray-400 duration-500 relative flex items-center font-bold text-xl font-Poppins "
               
                 onClick={toggleAboutMenu}
                 

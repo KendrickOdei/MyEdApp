@@ -9,11 +9,11 @@ export const LeadershipTeam: React.FC = () => {
   const [currentMember, setCurrentMember] = useState(0); // 0 for Mr. Samuel Okine Doku, 1 for Mr. S, 2 for Mr. M
 
   const nextMember = () => {
-    setCurrentMember((prevMember) => (prevMember === 2 ? 0 : prevMember + 1));
+    setCurrentMember((prevMember) => (prevMember === 1 ? 0 : prevMember + 1));
   };
 
   const prevMember = () => {
-    setCurrentMember((prevMember) => (prevMember === 0 ? 2 : prevMember - 1));
+    setCurrentMember((prevMember) => (prevMember === 0 ? 1 : prevMember - 1));
   };
 
   const members = [
@@ -24,17 +24,12 @@ export const LeadershipTeam: React.FC = () => {
       title: "Director"
     },
     {
-      name: 'Mr. Shadrach Simpson',
+      name: 'Mrs. Mercy Doku',
       imageUrl: '/img2.JPG',
       showDirectorMessage: false,
       title: 'Administrator'
     },
-    {
-      name: 'Mr. Makafui Nukunu',
-      imageUrl: '/img3.JPG',
-      showDirectorMessage: false,
-      title:'Headmaster'
-    },
+   
   ];
 
   return (
@@ -48,22 +43,22 @@ export const LeadershipTeam: React.FC = () => {
       duration: 0.5
     }}
     viewport={{ once: true }}
-  className="sm:ml-8 sm:mr-8 ml-4 mr-4 relative mt-[-40px] bg-[rgb(4,9,20)] h-[480px] sm:h-[590px]"
+  className="sm:ml-8 sm:mr-8 ml-4 mr-4 relative  bg-[rgb(4,9,20)] h-[480px] sm:h-[590px]"
   style={{ backgroundImage: `url(/src/assets/ED DP.png)` }}
 >
   <div className='border-l-2 border-red-600 py-2 ml-4 mt-2 sm:ml-8'>
-    <span className="ml-2 text-left sm:ml-44 p-2 flex text-white font-bold font-Poppins gap-2 text-xl sm:text-4xl">
-      Meet our <span className="text-red-500">Leadership</span> team
+    <span className="ml-2 text-center sm:ml-44 p-2 flex text-white font-bold font-Poppins gap-2 text-xl sm:text-4xl">
+      Meet our <span className="text-red-500">Directors</span> 
     </span>
   </div>
 
   {/* For small screens, display one member at a time */}
   <div
-    className="sm:hidden myImg member relative text-base text-white font-bold font-Poppins bg-cover mt-[16px] mb-4 w-[300px] h-[320px] items-center"
+    className="sm:hidden myImg member   w-32 items-center justify-center   h-full bg-no-repeat"
     style={{ backgroundImage: `url('${members[currentMember].imageUrl}')` }}
   >
     <div className="absolute top-44 left-0 right-0 p-4 text-center font-Poppins">
-      <span className="text-sm">{members[currentMember].name}</span>
+      <span className="text-sm font-bold text-white">{members[currentMember].name}</span>
     </div>
     <div className="absolute top-48 left-0 right-0 p-6 text-center font-bold font-Poppins">
       <span className="text-xl text-sky-600 ">{members[currentMember].title}</span>
@@ -71,17 +66,17 @@ export const LeadershipTeam: React.FC = () => {
     {members[currentMember].showDirectorMessage && (
       <NavLink 
         to='/DirectorsMessage'
-        className="flex absolute bottom-0 left-1/2 transform -translate-x-1/2 bg-[#3D2252] text-white gap-2 w-full shadow-md cursor-pointer p-2"
+        className="flex  absolute bottom-0 left-1/2 transform -translate-x-1/2 bg-sky-900 hover:bg-[#3D2252] text-white gap-2 w-full shadow-md cursor-pointer p-2"
       >
-        <span className="text-sm font-bold font-Poppins ">Read our Director's message</span>
-        <div>
+        <span className="text-xl font-bold font-Poppins ">Read more</span>
+        <div className='bg-white rounded-[1050px] text-sky-900 ml-4'>
           <svg 
             xmlns="http://www.w3.org/2000/svg" 
             fill="none" 
             viewBox="0 0 24 24" 
             strokeWidth="1.5"
             stroke="currentColor"
-            className="size-6"
+            className="size-8"
           >
             <path 
               strokeLinecap="round"
