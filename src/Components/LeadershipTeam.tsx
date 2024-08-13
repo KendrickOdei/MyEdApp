@@ -53,10 +53,15 @@ export const LeadershipTeam: React.FC = () => {
   </div>
 
   {/* For small screens, display one member at a time */}
-  <div
-    className="sm:hidden myImg member   w-32 items-center justify-center   h-full bg-no-repeat"
-    style={{ backgroundImage: `url('${members[currentMember].imageUrl}')` }}
-  >
+  <div className="relative w-full h-full overflow-hidden">
+      {members.map((member, index) => (
+        <div
+          key={index}
+          className={`absolute inset-0  bg-cover transition-opacity duration-500 ease-in-out sm:hidden myImg member   w-32 items-center justify-center   h-full bg-no-repeat ${
+            index === currentMember ? 'opacity-100 ' : 'opacity-0'
+          }`}
+          style={{ backgroundImage: `url('${member.imageUrl}')` }}
+        >
     <div className="absolute top-44 left-0 right-0 p-4 text-center font-Poppins">
       <span className="text-sm font-bold text-white">{members[currentMember].name}</span>
     </div>
@@ -88,6 +93,7 @@ export const LeadershipTeam: React.FC = () => {
       </NavLink>
     )}
   </div>
+))}
 
   {/* Navigation arrows for small screens */}
   <button
@@ -129,6 +135,9 @@ export const LeadershipTeam: React.FC = () => {
       />
     </svg>
   </button>
+
+   </div>
+   
 
   {/* For medium and larger screens, display all members in a flex box */}
   <div className="hidden  sm:flex gap-2 mt-4 mb-8 ml-6 mr-6">

@@ -39,13 +39,13 @@ const App: React.FC = () => {
       {loading && <CustomLoadingBar duration={1000} />}
       <NavBar />
       <Routes>
-        <Route path="/" element={<Layout><Hero /></Layout>} />
+        <Route path="/home" element={<Layout><Hero /></Layout>} />
         <Route path="/DirectorsMessage" element={<DirectorsMesssage />} />
         <Route path="/AboutEd" element={<AboutEd />} />
         
         <Route path="/Admission" element={<Admission />} />
         <Route path="/contact" element={<Layout><Contact /></Layout>} />
-        <Route path="*" element={<Navigate to="/" />} />
+        <Route path="*" element={<Navigate to="/home" />} />
       </Routes>
       <Footer />
     </div>

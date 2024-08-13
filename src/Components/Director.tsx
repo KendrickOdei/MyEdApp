@@ -81,7 +81,7 @@ const Director = () => {
         <button>
         <NavLink 
         to='/AboutEd'
-        className="flex absolute bottom-0   bg-sky-900 hover:bg-[#3D2252] text-white gap-2 w-full md:w-[1500px] shadow-md cursor-pointer p-2 left-0"
+        className="flex absolute bottom-0   bg-sky-900 hover:bg-[#3D2252] text-white gap-2 w-full md:w-full shadow-md cursor-pointer p-2 left-0"
       >
         <span className="text-xl font-bold font-Poppins ml-12 mr-5 md:text-2xl ">Read more</span>
         <div className='bg-white rounded-[1050px] text-sky-900'>

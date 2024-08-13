@@ -18,6 +18,12 @@ export default {
         'harvard-medium': '0 4px 6px rgba(0, 0, 0, 0.1), 0 2px 4px rgba(0, 0, 0, 0.06)',
         'harvard-dark': '0 10px 15px rgba(0, 0, 0, 0.1), 0 4px 6px rgba(0, 0, 0, 0.05)',
       },
+      transitionProperty: {
+        'opacity': 'opacity',
+      },
+      transitionDuration: {
+        '500': '500ms',
+      },
     },
   },
   plugins: [],
