@@ -2,10 +2,10 @@ import { useState,useEffect, } from 'react';
 import {  Routes, Route, Navigate, useLocation, } from 'react-router-dom';
 import Layout from './Layouts/layouts';
 import NavBar from '../src/Components/NavBar';
-import Hero from '../src/Components/hero'; // Adjusted filename assuming correct case
+
 import Footer from './Components/footer'; // Adjusted filename assuming correct case
 
-import Contact from './pages/Contact'; // Adjusted filename assuming correct case
+
 
 import Admission from './Components/Admission';
 import DirectorsMesssage from './pages/DirectorsMesssage';
@@ -15,7 +15,7 @@ import './App.css';
 import './Components/header.css';
 import './index.css';
 import CustomLoadingBar from './Components/CustomLoadingBar';
-
+import GraduationNews from './pages/GraduationNews';
 
 
 
@@ -39,12 +39,12 @@ const App: React.FC = () => {
       {loading && <CustomLoadingBar duration={1000} />}
       <NavBar />
       <Routes>
-        <Route path="/home" element={<Layout><Hero /></Layout>} />
+        <Route path="/home" element={<Layout children={undefined}/>} />
         <Route path="/DirectorsMessage" element={<DirectorsMesssage />} />
         <Route path="/AboutEd" element={<AboutEd />} />
         
         <Route path="/Admission" element={<Admission />} />
-        <Route path="/contact" element={<Layout><Contact /></Layout>} />
+        <Route path="/GraduationNews" element={<GraduationNews />} />
         <Route path="*" element={<Navigate to="/home" />} />
       </Routes>
       <Footer />

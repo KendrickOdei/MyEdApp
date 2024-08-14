@@ -63,9 +63,7 @@ const NavBar = () => {
   const handleContactLeave = () => {
     setContactMenuOpen(false)
   }
-  useEffect(() => {
-    window.scrollTo(0, 0); // Scrolls to the top when the component mounts
-  }, []);
+
  
   
 
@@ -91,13 +89,24 @@ const NavBar = () => {
     <div className="py-1 md:px-10 px-2 relative flex justify-between items-center  w-full">
     
        
-        <div className="text-white gap-3 font-bold text-xl ml-[-28px] cursor-pointer flex items-center font-Poppins p-3 rounded-md">
+        <div className="text-white gap-3 cursor-pointer font-bold text-xl ml-[-28px]  flex items-center font-Poppins p-3 rounded-md">
+          
+          <NavLink
+          to='/home'
+          >
+            <button>
           <div className=" p-1 left-0 rounded-md flex items-center border-container ml-4">
             <img className="w-10 h-14" src="/ED DP.png" alt="Not Supported" />
-            <span className="ml-3 flex md:text-xl ED-TEXT md:font-">
+            <span className="ml-3 flex md:text-xl ED-TEXT md:font- text-left">
               Ed <br /> Educational <br /> Complex
             </span>
           </div>
+            </button>
+          </NavLink>
+            
+          
+        
+         
         </div>
 
         {/* Navigation Links - visible on large screens */}
@@ -105,7 +114,7 @@ const NavBar = () => {
           <li className="text-xl mr-2 pb-2">
             <NavLink
               
-              to="/"
+              to="/home"
               className="text-white hover:text-gray-400 duration-500 md:border-r-4 md:border-red-600 md:px-2 md:font-bold"
               
               onClick={closeNavBar}
@@ -495,7 +504,7 @@ const NavBar = () => {
           <li className="text-xl md:border-b md:border-gray-300 pb-3 cursor-pointer">
             <NavLink
               
-              to="/"
+              to="/home"
               className="text-white nav-link  hover:text-gray-400 duration-500 text-xl font-bold font-Poppins  "
               
               onClick={closeNavBar}
@@ -507,16 +516,16 @@ const NavBar = () => {
           {/* About Ed */}
           <li  className="text-xl md:border-b md:border-gray-300 pb-3 relative ">
             <div className="flex items-center">
-              <NavLink
+              <div
                 
-                to=""
+               
                 className="text-white  nav-link hover:text-gray-400 duration-500 relative flex items-center font-bold text-xl font-Poppins "
               
                 onClick={toggleAboutMenu}
                 
                 
               >
-                <span>About Ed</span>
+                <span>About</span>
                 {!aboutMenuOpen ? (
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -550,7 +559,7 @@ const NavBar = () => {
                     />
                   </svg>
                 )}
-              </NavLink>
+              </div>
             </div>
             {aboutMenuOpen && (
               <div
@@ -561,12 +570,12 @@ const NavBar = () => {
                 <li  className="text-lg py-1">
                   <NavLink
                     
-                    to="/about/mission"
+                    to="/AboutEd"
                     className="text-white  hover:text-gray-400 duration-500 block font-bold text-xl font-Poppins border-l-4 border-red-500 px-4"
                     onClick={closeNavBar}
                     
                   >
-                    Mission and Vision
+                    About Ed
                   </NavLink>
                 </li>
                 <li  className="text-lg py-1">
@@ -599,13 +608,13 @@ const NavBar = () => {
       {/* Academics */}
       <li className="text-xl md:border-b md:border-gray-300 pb-3 cursor-pointer">
             <div className="flex items-center">
-              <NavLink
+              <div
                 
-                to=""
+                
                 className="text-white nav-link hover:text-gray-400 duration-500 flex font-bold text-xl font-Poppins"
                 
                 onClick={toggleAcademicMenu}
-                onMouseDownCapture={toggleAcademicMenu}
+            
                 
               >
                 <span>Academics</span>
@@ -642,7 +651,7 @@ const NavBar = () => {
                     />
                   </svg>
                 )}
-              </NavLink>
+              </div>
             </div>
             {academicsMenuOpen && (
               <div
@@ -701,9 +710,9 @@ const NavBar = () => {
           {/* Admissions */}
           <li  className="text-xl md:border-b md:border-gray-300 pb-3 cursor-pointer">
             <div className="flex items-center">
-              <NavLink
+              <div
                 
-                to=""
+                
                 className="text-white hover:text-gray-400 duration-500 flex font-bold text-xl font-Poppins"
                 
                 onClick={toggleAdmissionMenu}
@@ -743,23 +752,23 @@ const NavBar = () => {
                     />
                   </svg>
                 )}
-              </NavLink>
+              </div>
             </div>
             {admissionMenuOpen && (
               <div
                 
-                className="absolute top-30 left-0 mt-2 bg-sky-900 p-2 rounded-md shadow-lg z-50 w-full"
+                className="absolute top-30 left-0 mt-2 bg-sky-900 p-2 rounded-md shadow-lg z-50 w-full h-full"
                 
               >
                 <li  className="text-lg py-1">
                   <NavLink
                     
-                    to="/admission/requirements"
+                    to="/Admission"
                     className="text-white nav-link hover:text-gray-400 duration-500 block font-bold text-xl font-Poppins ml-6 border-l-4 border-red-500 px-4"
                     onClick={closeNavBar}
                     
                   >
-                   Admission Requirements
+                   Admission Process
                   </NavLink>
                 </li>
                 <li  className="text-lg py-1">
@@ -802,9 +811,9 @@ const NavBar = () => {
           
           <li  className="text-xl md:border-b md:border-gray-300 pb-3 cursor-pointer">
             <div className="flex items-center">
-              <NavLink
+              <div
                 
-                to=""
+                
                 className="text-white hover:text-gray-400 duration-500 flex font-bold text-xl font-Poppins"
                 
                 onClick={toggleStudentMenuOpen}
@@ -844,7 +853,7 @@ const NavBar = () => {
                     />
                   </svg>
                 )}
-              </NavLink>
+              </div>
             </div>
             {studentLifeMenuOpen && (
               <div
@@ -904,9 +913,9 @@ const NavBar = () => {
 
           <li  className="text-xl md:border-b md:border-gray-300 pb-3 cursor-pointer">
             <div className="flex items-center">
-              <NavLink
+              <div
                 
-                to=""
+                
                 className="text-white nav-link hover:text-gray-400 duration-500 flex font-bold text-xl font-Poppins"
                 
                 onClick={toggleContactMenu}
@@ -946,7 +955,7 @@ const NavBar = () => {
                     />
                   </svg>
                 )}
-              </NavLink>
+              </div>
             </div>
             {contactMenuOpen && (
               <motion.div

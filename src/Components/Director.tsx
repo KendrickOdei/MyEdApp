@@ -5,7 +5,7 @@ const Director = () => {
   return (
     <>
       <motion.div
-        className=" relative md:flex md:flex-col md:items-center md:justify-center    mb-12 mt-[-6px] md:h-[520px] bg-[#040F26] "
+        className=" relative md:flex md:flex-col md:items-center md:justify-center justify-center   mb-12 mt-[-6px] md:h-[520px] bg-[#040F26] "
         initial={{ y: 50, opacity: 0 }}
         whileInView={{ y: 0, opacity: 1 }}
         transition={{

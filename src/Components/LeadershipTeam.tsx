@@ -1,3 +1,4 @@
+
 import { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import { motion } from 'framer-motion';
@@ -140,7 +141,7 @@ export const LeadershipTeam: React.FC = () => {
    
 
   {/* For medium and larger screens, display all members in a flex box */}
-  <div className="hidden  sm:flex gap-2 mt-4 mb-8 ml-6 mr-6">
+  <div className="hidden mt-[-550px] justify-center sm:flex gap-2  mb-8 ml-6 mr-6">
     {members.map((member, index) => (
       <div
         key={index}
