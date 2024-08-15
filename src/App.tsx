@@ -1,5 +1,5 @@
 import { useState,useEffect, } from 'react';
-import {BrowserRouter as Router,  Routes, Route, Navigate, useLocation, } from 'react-router-dom';
+import {  Routes, Route, Navigate, useLocation, } from 'react-router-dom';
 import Layout from './Layouts/layouts';
 import NavBar from '../src/Components/NavBar';
 
