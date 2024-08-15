@@ -17,7 +17,7 @@ export default function Admission() {
     <>
      <div className="object-cover mt-6">
         <img src="/SndEll.JPG" alt="" 
-        className="w-full h-full bg-center object-cover inset-0 mt-[-150px] min-h-screen"
+        className="w-full h-full bg-center object-cover inset-0 mt-[-30px] min-h-screen"
         />
 
         <h1 className='text-2xl text-sky-900 font-bold font-poppins  border-l-4 border-red-700 py-6 p-3 mt-[-20px] ml-4'>

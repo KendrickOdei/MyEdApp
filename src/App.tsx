@@ -1,5 +1,5 @@
 import { useState,useEffect, } from 'react';
-import {  Routes, Route, Navigate, useLocation, } from 'react-router-dom';
+import {BrowserRouter as Router,  Routes, Route, Navigate, useLocation, } from 'react-router-dom';
 import Layout from './Layouts/layouts';
 import NavBar from '../src/Components/NavBar';
 
@@ -38,6 +38,7 @@ const App: React.FC = () => {
     <div>
       {loading && <CustomLoadingBar duration={1000} />}
       <NavBar />
+      
       <Routes>
         <Route path="/home" element={<Layout children={undefined}/>} />
         <Route path="/DirectorsMessage" element={<DirectorsMesssage />} />
@@ -47,6 +48,7 @@ const App: React.FC = () => {
         <Route path="/GraduationNews" element={<GraduationNews />} />
         <Route path="*" element={<Navigate to="/home" />} />
       </Routes>
+      
       <Footer />
     </div>
   );

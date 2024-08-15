@@ -65,7 +65,7 @@ const Graduates = () => {
            }}
            viewport={{ once: true }}
           >
-                <img src="/Grd4.JPG" className="w-full h-full object-cover" alt="Athlete 6" />
+                <img src="/Graduates.JPG" className="w-full h-full object-cover" alt="Athlete 6" />
           </motion.div>
 
           <motion.div className="absolute  right-24 transform translate-y-1/2 w-24 h-24 mt-[1250px]   shadow rounded overflow-hidden"
