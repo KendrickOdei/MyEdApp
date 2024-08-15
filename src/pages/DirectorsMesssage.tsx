@@ -31,8 +31,8 @@ const DirectorsMesssage = () => {
 
   
       <div className="object-cover ">
-        <img src="/darkHero.jpeg" alt="" 
-        className="w-full h-full object-cover inset-0 mt-[-150px] min-h-screen"
+        <img src="/Director.JPG" alt="" 
+        className="w-full h-full object-cover inset-0 bg-center min-h-screen"
         />
 
         <h1 className='text-2xl text-sky-900 font-bold font-poppins  border-l-4 border-red-700 py-6 p-3 mt-[-20px] ml-4'>

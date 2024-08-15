@@ -22,13 +22,15 @@ const Layouts: React.FC<Props> = ({ children }) => {
  return (
     <div className="  min-h-screen ">
      
-      
+     <Hero/>
       
       <div className="container mx-auto py-10 flex-1 progress-bar" >{children}</div>
-      <Hero/>
+      
       
       
       <Graduates/>
+      
+      
       <Facilities/>
       
 

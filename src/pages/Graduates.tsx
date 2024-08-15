@@ -8,9 +8,9 @@ const Graduates = () => {
   
 
   return (
-    <section className="bg-black py-16 min-h-[800px]   graduates ">
+    <section className="bg-black py-16 min-h-[800px]  graduates ">
       
-      <div className=" p-1 left-0 rounded-md flex items-center border-container ml-4">
+      <div className=" p-1 left-0 rounded-md flex items-center border-container ml-4 ">
           <motion.div className="absolute mt-8 right-0 transform translate-y-1/2 w-32 h-24  shadow rounded overflow-hidden"
               initial={{ y: 50, opacity: 0 }}
               whileInView={{ y: 0, opacity: 1 }}
@@ -22,7 +22,7 @@ const Graduates = () => {
               }}
               viewport={{ once: true }}
           >
-                <img src="/img1.JPG" className="w-full h-full object-cover" alt="Athlete 6" />
+                <img src="/Grd1.JPG" className="w-full h-full object-cover" alt="Athlete 6" />
           </motion.div>
 
           <motion.div className="absolute  left-0 transform translate-y-1/2 w-28 h-28 mt-48 shadow rounded overflow-hidden"
@@ -36,7 +36,7 @@ const Graduates = () => {
            }}
            viewport={{ once: true }}
           >
-                <img src="/img2.JPG"  className="w-full h-full object-cover" alt="Athlete 6" />
+                <img src="/Grd2.JPG"  className="w-full h-full object-cover" alt="Athlete 6" />
           </motion.div>
 
           <motion.div className="absolute  left-24 transform translate-y-1/2 w-20 h-16 mt-[-40px]  shadow rounded overflow-hidden"
@@ -50,7 +50,7 @@ const Graduates = () => {
            }}
            viewport={{ once: true }}
           >
-                <img src="/img3.JPG"  className="w-full h-full object-cover" alt="Athlete 6" />
+                <img src="/Grd3.JPG"  className="w-full h-full object-cover" alt="Athlete 6" />
           </motion.div>
 
 
@@ -65,7 +65,7 @@ const Graduates = () => {
            }}
            viewport={{ once: true }}
           >
-                <img src="/Hero.JPG" className="w-full h-full object-cover" alt="Athlete 6" />
+                <img src="/Grd4.JPG" className="w-full h-full object-cover" alt="Athlete 6" />
           </motion.div>
 
           <motion.div className="absolute  right-24 transform translate-y-1/2 w-24 h-24 mt-[1250px]   shadow rounded overflow-hidden"
@@ -79,7 +79,7 @@ const Graduates = () => {
            }}
            viewport={{ once: true }}
           >
-                <img src="/img1.JPG" className="w-full h-full object-cover" alt="Athlete 6" />
+                <img src="/Grd5.JPG" className="w-full h-full object-cover" alt="Athlete 6" />
           </motion.div>
 
           <motion.div className="absolute  left-0  transform translate-y-1/2 w-24 h-20 mb-[-1090px]   shadow rounded overflow-hidden"
@@ -93,7 +93,7 @@ const Graduates = () => {
            }}
            viewport={{ once: true }}
           >
-                <img src="/darkHero.jpeg" className="w-full h-full object-cover" alt="Athlete 6" />
+                <img src="/Grd6.JPG" className="w-full h-full object-cover" alt="Athlete 6" />
           </motion.div>
 
 

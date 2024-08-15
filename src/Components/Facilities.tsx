@@ -4,16 +4,16 @@ const sectionsData = [
   {
    
     images: [
-      { src: '/img1.JPG', name: 'Modern Library' },
-      { src: '/darkHero.jpeg', name: 'Computer Laboratory' },
+      { src: '/Lab3.JPG', name: 'Computer Lab' },
+      { src: '/Lab2.JPG', name: 'Computer Laboratory' },
     ],
     interval: 3000, // 3 seconds
   },
   {
 
     images: [
-      { src: '/img2.JPG', name: 'Conference Hall' },
-      { src: '/img1.JPG', name: 'Modern Classroom' },
+      { src: '/Class.JPG', name: 'Class Room' },
+      { src: '/ArtCenter.JPG', name: 'Exhibition Center' },
     ],
     interval: 4000, // 5 seconds
   },
@@ -75,9 +75,9 @@ const Facilities = () => {
             >
               {section.images.map((image, imgIndex) => (
                 <div key={imgIndex} className="w-full flex-shrink-0 relative">
-                  <img src={image.src} alt={image.name} className="w-full h-full md:h-[900px] object-cover" />
+                  <img src={image.src} alt={image.name} className="w-full h-full md:h-full object-cover" />
                   <div className="absolute inset-0 bg-opacity-50 flex justify-center items-center">
-                    <p className="text-white text-xl font-bold">{image.name}</p>
+                    <p className="text-white text-2xl font-bold">{image.name}</p>
                   </div>
                 </div>
               ))}

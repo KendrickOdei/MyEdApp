@@ -21,7 +21,7 @@ const NewsSection: React.FC = () => {
     viewport={{ once: true }}
     >
     
-  <img src="img1.JPG" alt="Background Image" className="object-cover w-full h-full min-h-screen"/>
+  <img src="IMG_0270.JPG" alt="Background Image" className="object-cover w-full h-full min-h-screen"/>
 
   
   <div className="absolute inset-0 flex items-center justify-center">
