@@ -9,7 +9,7 @@ const NewsSection: React.FC = () => {
 
 
   return (
-    <motion.div className="relative w-full h-full md:h-[800px] mt-[-20px] bottom-6 "
+    <motion.div className="relative w-full h-full md:h-[800px] mt-[-70px] bottom-6 "
     initial={{ y: 50, opacity: 0 }}
     whileInView={{ y: 0, opacity: 1 }}
     transition={{

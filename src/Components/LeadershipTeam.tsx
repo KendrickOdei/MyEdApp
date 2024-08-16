@@ -44,7 +44,7 @@ export const LeadershipTeam: React.FC = () => {
       duration: 0.5
     }}
     viewport={{ once: true }}
-  className="sm:ml-8 sm:mr-8 ml-4 mr-4 relative  bg-[rgb(4,9,20)] h-[480px] sm:h-[590px]"
+  className="sm:ml-8 sm:mr-8 ml-4 mr-4 relative mt-2 bg-[rgb(4,9,20)] h-[480px] sm:h-[590px]"
   style={{ backgroundImage: `url(/src/assets/ED DP.png)` }}
 >
   <div className='border-l-2 border-red-600 py-2 ml-4 mt-2 sm:ml-8'>

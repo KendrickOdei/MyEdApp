@@ -8,9 +8,9 @@ const Graduates = () => {
   
 
   return (
-    <section className="bg-black py-16 min-h-[800px]  graduates ">
+    <section className="bg-black graduates min-h-[800px]">
       
-      <div className=" p-1 left-0 rounded-md flex items-center border-container ml-4 ">
+      <div className=" p-1 left-0 rounded-md flex mt-16  items-center border-container ml-4 ">
           <motion.div className="absolute mt-8 right-0 transform translate-y-1/2 w-32 h-24  shadow rounded overflow-hidden"
               initial={{ y: 50, opacity: 0 }}
               whileInView={{ y: 0, opacity: 1 }}
@@ -22,7 +22,7 @@ const Graduates = () => {
               }}
               viewport={{ once: true }}
           >
-                <img src="/Grd1.JPG" className="w-full h-full object-cover" alt="Athlete 6" />
+                <img src="/Grd1.JPG" className="w-full h-full object-cover " alt="Athlete 6" />
           </motion.div>
 
           <motion.div className="absolute  left-0 transform translate-y-1/2 w-28 h-28 mt-48 shadow rounded overflow-hidden"

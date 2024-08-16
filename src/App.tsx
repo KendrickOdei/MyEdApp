@@ -16,7 +16,7 @@ import './Components/header.css';
 import './index.css';
 import CustomLoadingBar from './Components/CustomLoadingBar';
 import GraduationNews from './pages/GraduationNews';
-
+import Hero from './Components/hero';
 
 
 
@@ -40,13 +40,13 @@ const App: React.FC = () => {
       <NavBar />
       
       <Routes>
-        <Route path="/home" element={<Layout children={undefined}/>} />
+        <Route path="/" element={<Layout><Hero/></Layout>} />
         <Route path="/DirectorsMessage" element={<DirectorsMesssage />} />
         <Route path="/AboutEd" element={<AboutEd />} />
         
         <Route path="/Admission" element={<Admission />} />
         <Route path="/GraduationNews" element={<GraduationNews />} />
-        <Route path="*" element={<Navigate to="/home" />} />
+        <Route path="*" element={<Navigate to="/" />} />
       </Routes>
       
       <Footer />

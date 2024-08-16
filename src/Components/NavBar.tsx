@@ -114,7 +114,7 @@ const NavBar = () => {
           <li className="text-xl mr-2 pb-2">
             <NavLink
               
-              to="/home"
+              to="/"
               className="text-white hover:text-gray-400 duration-500 md:border-r-4 md:border-red-600 md:px-2 md:font-bold"
               
               onClick={closeNavBar}
@@ -504,7 +504,7 @@ const NavBar = () => {
           <li className="text-xl md:border-b md:border-gray-300 pb-3 cursor-pointer">
             <NavLink
               
-              to="/home"
+              to="/"
               className="text-white nav-link  hover:text-gray-400 duration-500 text-xl font-bold font-Poppins  "
               
               onClick={closeNavBar}

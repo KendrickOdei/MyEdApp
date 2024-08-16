@@ -8,7 +8,7 @@ import Graduates from "../pages/Graduates";
 import Facilities from "../Components/Facilities";
 import Location from "../Components/Location";
 import LocationText from "../Components/LocationText";
-import Hero from "../Components/hero";
+
 interface Props {
   children: React.ReactNode;
 }
@@ -20,15 +20,18 @@ const Layouts: React.FC<Props> = ({ children }) => {
   }, []);
 
  return (
-    <div className="  min-h-screen ">
+    <div className="  flex flex-col  mx-auto min-h-screen">
      
-     <Hero/>
+     
       
       <div className="container mx-auto py-10 flex-1 progress-bar" >{children}</div>
       
       
-      
+  
       <Graduates/>
+   
+      
+     
       
       
       <Facilities/>

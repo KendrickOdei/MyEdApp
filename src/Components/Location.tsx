@@ -2,7 +2,7 @@ import {motion} from 'framer-motion'
 
 const Location = ()=> {
     return (
-        <motion.div className="relative w-full h-64 bottom-5 min-h-screen"
+        <motion.div className="relative w-full h-64 bottom-5 min-h-screen md:mt-10"
         initial={{ y: 50, opacity: 0 }}
         whileInView={{ y: 0, opacity: 1 }}
         transition={{
