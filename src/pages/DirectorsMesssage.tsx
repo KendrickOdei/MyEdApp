@@ -30,7 +30,7 @@ const DirectorsMesssage = () => {
     
 
   
-      <div className="object-cover ">
+      <div className="object-cover mt-[110px] ">
         <img src="/Director.JPG" alt="" 
         className="w-full h-full object-cover inset-0 bg-center min-h-screen"
         />
