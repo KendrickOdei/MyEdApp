@@ -276,7 +276,7 @@ const NavBar = () => {
             )}
           </li>
           {/* Admission on md screen */}
-          <li className="text-xl  pb-3">
+          <li className="text-xl min-h-screen pb-3">
             <NavLink
               
               to="/admission"
