@@ -8,7 +8,7 @@ const Graduates = () => {
   
 
   return (
-    <section className="bg-black graduates min-h-[800px]">
+    <section className="bg-black  graduates min-h-[800px]">
       
       <div className=" p-1 left-0 rounded-md flex mt-16  items-center border-container ml-4 ">
           <motion.div className="absolute mt-8 right-0 transform translate-y-1/2 w-32 h-24  shadow rounded overflow-hidden"
