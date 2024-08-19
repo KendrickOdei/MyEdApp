@@ -1,6 +1,6 @@
 
 
-import  { useState,useEffect } from "react";
+import  { useState, } from "react";
 import { NavLink } from "react-router-dom";
 import {  motion } from "framer-motion";
 
@@ -67,21 +67,11 @@ const NavBar = () => {
  
   
 
-  const [scrolled, setScrolled] = useState(false);
 
-  const handleScroll = () => {
-    if (window.scrollY > 50) { // Adjust scroll threshold as needed
-      setScrolled(true);
-    } else {
-      setScrolled(false);
-    }
-  };
 
-  useEffect(() => {
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
 
+
+ 
   return (
     <>
     <nav className= "w-full navBar fixed top-0 left-0 right-0 z-50 bg-sky-950" >
