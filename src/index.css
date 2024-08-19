@@ -138,7 +138,7 @@ body {
 /* 320px and below */
 @media(min-width: 320px) and (max-width:359px) {
   .graduates{
-    margin-top: 460px;
+    margin-top: 430px;
   }
 }
 
@@ -169,7 +169,7 @@ body {
 
 @media(min-width: 414px)  {
   .graduates{
-    margin-top: 780px;
+    margin-top: 740px;
   }
 }
 
