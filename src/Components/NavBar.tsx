@@ -1,6 +1,6 @@
 
 
-import  { useState, } from "react";
+import  { useState,useEffect } from "react";
 import { NavLink } from "react-router-dom";
 import {  motion } from "framer-motion";
 
@@ -68,13 +68,9 @@ const NavBar = () => {
   
 
 
-
-
-
- 
   return (
     <>
-    <nav className= "w-full navBar fixed top-0 left-0 right-0 z-50 bg-sky-950" >
+    <nav className="w-full navBar fixed top-0 left-0 right-0 z-50 bg-sky-950 ">
 
     <div className="py-1 md:px-10 px-2 relative flex justify-between items-center  w-full">
     
@@ -104,7 +100,7 @@ const NavBar = () => {
           <li className="text-xl mr-2 pb-2">
             <NavLink
               
-              to="/"
+              to="/home"
               className="text-white hover:text-gray-400 duration-500 md:border-r-4 md:border-red-600 md:px-2 md:font-bold"
               
               onClick={closeNavBar}
@@ -276,7 +272,7 @@ const NavBar = () => {
             )}
           </li>
           {/* Admission on md screen */}
-          <li className="text-xl min-h-screen pb-3">
+          <li className="text-xl  pb-3">
             <NavLink
               
               to="/admission"
@@ -483,7 +479,7 @@ const NavBar = () => {
         
         className={`${
           isOpen ? "translate-x-0 opacity-100" : "translate-x-full opacity-0"
-        } md:hidden md:pb-0 pb-14 p-6 top-[105px] absolute py-8 right-0 md:w-auto md:pl-0 pl-9 transition-transform duration-700 ease-in-out gap-10 bg-[rgb(4,9,20)] cursor-pointer w-full   z-50`}
+        } md:hidden md:pb-0 pb-14 p-6 top-[105px] absolute py-8 right-0 md:w-auto md:pl-0 pl-9 transition-transform duration-700 ease-in-out gap-10 bg-[rgb(4,9,20)] cursor-pointer w-full overflow-hidden z-50`}
         style={{ zIndex: isOpen ? "60" : "-1" }}
         initial={{ opacity: 0, x: '100%' }}
         animate={{ opacity: isOpen ? 1 : 0, x: isOpen ? '0%' : '100%' }}
@@ -491,7 +487,7 @@ const NavBar = () => {
         
         >
           {/* Home */}
-          <li className="text-xl md:border-b md:border-gray-300 p-4 cursor-pointer border-b border-gray-50 w-full">
+          <li className="text-xl md:border-b md:border-gray-300 pb-3 cursor-pointer">
             <NavLink
               
               to="/"
@@ -504,12 +500,12 @@ const NavBar = () => {
             </NavLink>
           </li>
           {/* About Ed */}
-          <li  className="text-xl md:border-b md:border-gray-300 p-4   border-b border-gray-50">
+          <li  className="text-xl md:border-b md:border-gray-300 pb-3 relative ">
             <div className="flex items-center">
               <div
                 
                
-                className="text-white  nav-link hover:text-gray-400 duration-500 flex items-center font-bold text-xl font-Poppins "
+                className="text-white  nav-link hover:text-gray-400 duration-500 relative flex items-center font-bold text-xl font-Poppins "
               
                 onClick={toggleAboutMenu}
                 
@@ -522,8 +518,8 @@ const NavBar = () => {
                     fill="none"
                     viewBox="0 0 24 24"
                     stroke="currentColor"
-                    className={`h-6 w-6 absolute right-6 transition-transform duration-300 transform md:hidden `}
-                    
+                    className={`h-6 w-6 ml-2 transition-transform duration-300 transform md:hidden`}
+                    style={{ marginLeft: "45px" }}
                   >
                     <path
                       strokeLinecap="round"
@@ -538,8 +534,8 @@ const NavBar = () => {
                     fill="none"
                     viewBox="0 0 24 24"
                     stroke="currentColor"
-                    className={`h-6 w-6 absolute right-6 transition-transform duration-300 transform rotate-180 md:hidden`}
-                   
+                    className={`h-6 w-6 ml-2 transition-transform duration-300 transform rotate-180 md:hidden`}
+                    style={{ marginLeft: "45px" }}
                   >
                     <path
                       strokeLinecap="round"
@@ -554,7 +550,7 @@ const NavBar = () => {
             {aboutMenuOpen && (
               <div
              
-                className="absolute top-30  mt-4 bg-sky-900  p-2 w-full shadow-lg z-50  left-0 "
+                className="absolute top-30  mt-4 bg-sky-900  p-2  shadow-lg z-50  left-0 "
                 
               >
                 <li  className="text-lg py-1">
@@ -596,7 +592,7 @@ const NavBar = () => {
           </li>
        {/* Academics */}
       {/* Academics */}
-      <li className="text-xl md:border-b md:border-gray-300 p-4  cursor-pointer border-b border-gray-50">
+      <li className="text-xl md:border-b md:border-gray-300 pb-3 cursor-pointer">
             <div className="flex items-center">
               <div
                 
@@ -614,8 +610,8 @@ const NavBar = () => {
                     fill="none"
                     viewBox="0 0 24 24"
                     stroke="currentColor"
-                    className={`h-6 w-6 absolute right-6 transition-transform duration-300 transform md:hidden`}
-                    
+                    className={`h-6 w-6 ml-2 transition-transform duration-300 transform md:hidden`}
+                    style={{ marginLeft: "32px" }}
                   >
                     <path
                       strokeLinecap="round"
@@ -630,7 +626,7 @@ const NavBar = () => {
                     fill="none"
                     viewBox="0 0 24 24"
                     stroke="currentColor"
-                    className={`h-6 w-6 absolute right-6 transition-transform duration-300 transform rotate-180 md:hidden`}
+                    className={`h-6 w-6 ml-2 transition-transform duration-300 transform rotate-180 md:hidden`}
                     style={{ marginLeft: "32px" }}
                   >
                     <path
@@ -698,7 +694,7 @@ const NavBar = () => {
             )}
           </li>
           {/* Admissions */}
-          <li  className="text-xl md:border-b md:border-gray-300 p-4  cursor-pointer border-b border-gray-50">
+          <li  className="text-xl md:border-b md:border-gray-300 pb-3 cursor-pointer">
             <div className="flex items-center">
               <div
                 
@@ -715,8 +711,8 @@ const NavBar = () => {
                     fill="none"
                     viewBox="0 0 24 24"
                     stroke="currentColor"
-                    className={`h-6 w-6 absolute right-6 transition-transform duration-300 transform md:hidden `}
-                   
+                    className={`h-6 w-6 ml-2 transition-transform duration-300 transform md:hidden right-8`}
+                    style={{ marginLeft: "24px" }}
                   >
                     <path
                       strokeLinecap="round"
@@ -731,8 +727,8 @@ const NavBar = () => {
                     fill="none"
                     viewBox="0 0 24 24"
                     stroke="currentColor"
-                    className={`h-6 w-6 absolute right-6 transition-transform duration-300 transform rotate-180 md:hidden`}
-                   
+                    className={`h-6 w-6 ml-2 transition-transform duration-300 transform rotate-180 md:hidden`}
+                    style={{ marginLeft: "24px" }}
                   >
                     <path
                       strokeLinecap="round"
@@ -747,7 +743,7 @@ const NavBar = () => {
             {admissionMenuOpen && (
               <div
                 
-                className="absolute top-30 left-0 mt-2 bg-sky-900 p-2 rounded-md shadow-lg z-50 w-full "
+                className="absolute top-30 left-0 mt-2 bg-sky-900 p-2 rounded-md shadow-lg z-50 w-full h-full"
                 
               >
                 <li  className="text-lg py-1">
@@ -799,7 +795,7 @@ const NavBar = () => {
           </li>
           {/* Students life */}
           
-          <li  className="text-xl md:border-b md:border-gray-300 p-4  cursor-pointer border-b border-gray-50">
+          <li  className="text-xl md:border-b md:border-gray-300 pb-3 cursor-pointer">
             <div className="flex items-center">
               <div
                 
@@ -816,8 +812,8 @@ const NavBar = () => {
                     fill="none"
                     viewBox="0 0 24 24"
                     stroke="currentColor"
-                    className={`h-6 w-6 absolute right-6 transition-transform duration-300 transform md:hidden`}
-          
+                    className={`h-6 w-6 ml-2 transition-transform duration-300 transform md:hidden`}
+                    style={{ marginRight: "4px" }}
                   >
                     <path
                       strokeLinecap="round"
@@ -832,8 +828,8 @@ const NavBar = () => {
                     fill="none"
                     viewBox="0 0 24 24"
                     stroke="currentColor"
-                    className={`h-6 w-6 absolute right-6 transition-transform duration-300 transform rotate-180 md:hidden`}
-                   
+                    className={`h-6 w-6 ml-2 transition-transform duration-300 transform rotate-180 md:hidden`}
+                    style={{ marginRight: "2px" }}
                   >
                     <path
                       strokeLinecap="round"
@@ -900,8 +896,8 @@ const NavBar = () => {
           </li>
           {/* Contacts menu */}
           
- 
-          <li  className="text-xl md:border-b md:border-gray-300 p-4  cursor-pointer border-b border-gray-50">
+
+          <li  className="text-xl md:border-b md:border-gray-300 pb-3 cursor-pointer">
             <div className="flex items-center">
               <div
                 
@@ -918,8 +914,8 @@ const NavBar = () => {
                     fill="none"
                     viewBox="0 0 24 24"
                     stroke="currentColor"
-                    className={`h-6 w-6 absolute right-6 transition-transform duration-300 transform md:hidden`}
-                  
+                    className={`h-6 w-6 ml-7 transition-transform duration-300 transform md:hidden`}
+                    style={{ marginRight: "24px" }}
                   >
                     <path
                       strokeLinecap="round"
@@ -934,8 +930,8 @@ const NavBar = () => {
                     fill="none"
                     viewBox="0 0 24 24"
                     stroke="currentColor"
-                    className={`h-6 w-6 absolute right-6 transition-transform duration-300 transform rotate-180 md:hidden`}
-                   
+                    className={`h-6 w-6 ml-7 transition-transform duration-300 transform rotate-180 md:hidden`}
+                    style={{ marginRight: "24px" }}
                   >
                     <path
                       strokeLinecap="round"
@@ -950,7 +946,7 @@ const NavBar = () => {
             {contactMenuOpen && (
               <motion.div
                 
-                className="absolute top-30 left-0 mt-2 bg-sky-900 p-2 rounded-md shadow-lg z-50 w-full "
+                className="absolute top-30 left-0 mt-2 bg-sky-900 p-2 rounded-md shadow-lg z-50 w-full"
                
               >
                 <li  className="text-lg py-1">

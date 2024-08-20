@@ -1,8 +1,14 @@
-
+import { useEffect } from 'react';
 
 import  './Hero.css'
 const Hero = () => {
 
+  useEffect(() => {
+    window.scrollTo(0, 0); // Scrolls to the top when the component mounts
+  }, []);
+  
+ 
+  
 
   return (
     <div className="   z-10 bg-center  " >

@@ -25,7 +25,7 @@ const NewsSection: React.FC = () => {
 
   
   <div className="absolute inset-0 flex items-center justify-center">
-  <p className='p-4 mt-[-220px] text-white font-bold text-2xl text-center'>JOIN US TODAY AND EMBARK ON A PATH TO SUCCESS.</p>
+  <p className='p-4 md:mt-[-390px] text-white font-bold md:text-4xl text-center'>JOIN US TODAY AND EMBARK ON A PATH TO SUCCESS.</p>
   <button className="absolute text-xl mt-44 w-[300px]  bg-blue-900 text-white font-bold py-4 px-4 rounded-lg hover:bg-blue-600 transition duration-300">
       <NavLink
         to='/Admission'
