@@ -9,7 +9,7 @@ const NewsSection: React.FC = () => {
 
 
   return (
-    <motion.div className="relative w-full h-full md:h-[800px] mt-[-70px] bottom-6 "
+    <motion.div className="relative w-full h-full md:h-[800px]  bottom-6 "
     initial={{ y: 50, opacity: 0 }}
     whileInView={{ y: 0, opacity: 1 }}
     transition={{
@@ -21,7 +21,7 @@ const NewsSection: React.FC = () => {
     viewport={{ once: true }}
     >
     
-  <img src="IMG_0270.JPG" alt="Background Image" className="object-cover w-full h-full min-h-screen"/>
+  <img src="ApplyNow.JPG" alt="Background Image" className="object-cover bg-center w-full h-full min-h-screen"/>
 
   
   <div className="absolute inset-0 flex items-center justify-center">

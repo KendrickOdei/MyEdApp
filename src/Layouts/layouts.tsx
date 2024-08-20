@@ -8,7 +8,7 @@ import Graduates from "../pages/Graduates";
 import Facilities from "../Components/Facilities";
 import Location from "../Components/Location";
 import LocationText from "../Components/LocationText";
-
+import StudentsLife from "../Components/StudentsLife";
 interface Props {
   children: React.ReactNode;
 }
@@ -45,6 +45,8 @@ const Layouts: React.FC<Props> = ({ children }) => {
       <Director/>
      
       </div>
+
+      <StudentsLife/>
       
       
       <div className="mt-16">

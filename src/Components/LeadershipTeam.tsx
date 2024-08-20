@@ -28,7 +28,7 @@ export const LeadershipTeam: React.FC = () => {
       name: 'Mrs. Mercy Doku',
       imageUrl: '/Madam.JPG',
       showDirectorMessage: false,
-      title: 'Administrator'
+      title: 'Principal'
     },
    
   ];
@@ -148,23 +148,27 @@ export const LeadershipTeam: React.FC = () => {
         className="relative  mr-2 ml-2 text-base text-white font-bold font-Poppins bg-cover w-[580px] h-[420px]"
         style={{ backgroundImage: `url('${member.imageUrl}')` }}
       >
-        <div className="absolute top-0 left-0 right-0 p-4 text-center">
-          <span className="text-xl">{member.name}</span>
+        <div className="absolute top-[230px] left-0 right-0 p-4 text-center">
+          <span className="text-3xl">{member.name}</span>
         </div>
+        <div className="absolute top-[245px] left-0 right-0 p-6 text-center font-bold font-Poppins">
+      <span className="text-4xl text-sky-600 ">{member.title}</span>
+         </div>
+
         {member.showDirectorMessage && (
           <NavLink
             to='/DirectorsMessage'
             className="flex absolute bottom-0 left-1/2 transform -translate-x-1/2 bg-[#3D2252] text-white p-2 w-full shadow-md cursor-pointer gap-4"
           >
             <span className="text-xl">Read more</span>
-            <div className='text-2xl font-bold p-1 bg-red-500 rounded-full'>
+            <div className='text-2xl font-bold p-1 bg-white rounded-full'>
               <svg 
                 xmlns="http://www.w3.org/2000/svg" 
                 fill="none" 
                 viewBox="0 0 24 24" 
                 strokeWidth="1.5"
                 stroke="currentColor"
-                className="size-6"
+                className="size-6 text-sky-900"
               >
                 <path 
                   strokeLinecap="round"
