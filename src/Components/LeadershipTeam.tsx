@@ -28,7 +28,7 @@ export const LeadershipTeam: React.FC = () => {
       name: 'Mrs. Mercy Doku',
       imageUrl: '/Madam.JPG',
       showDirectorMessage: false,
-      title: 'Principal'
+      title: 'Co-Director'
     },
    
   ];

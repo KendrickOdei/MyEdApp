@@ -24,7 +24,7 @@ const Layouts: React.FC<Props> = ({ children }) => {
      
      
       
-      <div className="container mx-auto py-10 flex-1 progress-bar" >{children}</div>
+      <div className="container mx-auto py-10 flex-1 progress-bar flex-grow" >{children}</div>
       
       
   

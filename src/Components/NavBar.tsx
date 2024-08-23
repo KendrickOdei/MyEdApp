@@ -11,14 +11,12 @@ const NavBar = () => {
   const [academicsMenuOpen, setAcademicsMenuOpen] = useState(false);
   const [admissionMenuOpen,setAdmissionsMenuOpen] = useState(false);
   const [studentLifeMenuOpen,setStudentLifeMenuOpen] = useState(false);
-  const [contactMenuOpen,setContactMenuOpen] = useState(false)
+
 
   const toggleNavBar = () => {
     setIsOpen(!isOpen);
   };
-  const toggleContactMenu = () =>{
-    setContactMenuOpen(!contactMenuOpen);
-  }
+
 
   const toggleAboutMenu = () => {
    
@@ -60,9 +58,7 @@ const NavBar = () => {
   const handleStudentLeave = () => {
     setStudentLifeMenuOpen(false)
   }
-  const handleContactLeave = () => {
-    setContactMenuOpen(false)
-  }
+ 
 
  
   
@@ -109,17 +105,22 @@ const NavBar = () => {
             </NavLink>
           </li>
           {/* About list on md screen */}
-          <li className="text-xl  pb-1 relative">
+          <li className="text-xl  pb-1 relative"
+          onMouseEnter={toggleAboutMenu}
+          onMouseLeave={handleAboutLeave}
+          >
             <div className="flex items-center">
               <div
                 
-                className="text-white hover:text-gray-400 duration-500 relative flex items-center hover:decoration hover:underline  cursor-pointer md:border-r-4 md:border-red-600 md:px-1 gap-1 md:font-bold"
+                className="text-white hover:text-gray-400 duration-500 relative flex items-center   cursor-pointer md:border-r-4 md:border-red-600 md:px-1 gap-1 md:font-bold"
                 
                 
-                onMouseEnter={toggleAboutMenu}
-                onClick={toggleAboutMenu}
+                
+                
+                
               >
-                <span >About Ed</span>
+                
+                <span >About</span>
                 
                 
                 <svg
@@ -143,26 +144,26 @@ const NavBar = () => {
                 
                
               </div>
-            </div>
-            {aboutMenuOpen && (
+              {aboutMenuOpen && (
               <div
               
                
                 className={`absolute top-8 left-0 mt-0 bg-white p-2 shadow-lg z-50 text-left ml-[-70px]  w-52 transform ${
                   aboutMenuOpen ? "translate-y-0 opacity-100" : "translate-y-[-10px] opacity-0"
                 }`}
-                onMouseLeave={handleAboutLeave}
+                
+                
               >
                 <li className="text-lg py-1">
                   <NavLink
                     
-                    to="/about/history"
+                    to="/AboutEd"
                     className="text-sky-900 hover:text-sky-900 duration-5000 block border-l-4 border-red-500 px-2 font-bold"
                     onClick={closeNavBar}
                     
                     
                   >
-                    History
+                    About Ed
                   </NavLink>
                 </li>
                 <li className="text-lg py-1">
@@ -173,7 +174,7 @@ const NavBar = () => {
                     onClick={closeNavBar}
                  
                   >
-                    Mission
+                   History and Mission
                   </NavLink>
                 </li>
                 <li  className="text-lg py-1">
@@ -189,17 +190,21 @@ const NavBar = () => {
                 </li>
               </div>
             )}
+            </div>
+            
           </li>
           {/* Academics on md screen  */}
-          <li className="text-xl  pb-1">
+          <li className="text-xl  pb-1"
+           onMouseEnter={toggleAcademicMenu}
+           onMouseLeave={handleAcademicsLeave}
+          >
             <div>
               <NavLink
                 
                 to="/academics"
                 className="text-white hover:text-gray-400 duration-500 relative flex items-center md:border-r-4 md:border-red-600 md:px-2 gap-2 md:font-bold"
                
-                onMouseEnter={toggleAcademicMenu}
-                onMouseLeave={handleAcademicsLeave}
+               
               >
                 <span>Academics</span>
                 <svg
@@ -272,16 +277,32 @@ const NavBar = () => {
             )}
           </li>
           {/* Admission on md screen */}
-          <li className="text-xl  pb-3">
+          <li className="text-xl  pb-3"
+            onMouseEnter={toggleAdmissionMenu}
+            onMouseLeave={handleAdmissionLeave}
+          >
             <NavLink
               
               to="/admission"
-              className="text-white hover:text-gray-400 duration-500 md:w-36 md:border-r-4 md:border-red-600 md:px-2 gap-2 md:font-bold"
+              className="text-white hover:text-gray-400 duration-500 relative flex items-center md:border-r-4 md:border-red-600 md:px-2 gap-2 md:font-bold"
               
-              onMouseEnter={toggleAdmissionMenu}
-              onMouseLeave={handleAdmissionLeave}
+            
             >
               <span>Admission</span>
+              <svg
+                 xmlns="http://www.w3.org/2000/svg" 
+                 fill="none"
+                viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  className="size-6"
+                 
+                  >
+                    <path 
+                  stroke-linecap="round" 
+                  stroke-linejoin="round"
+                    d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+                  </svg>
          
 
               
@@ -338,114 +359,24 @@ const NavBar = () => {
             )}
           </li>
           {/* Student life on md screen */}
-          <li className="text-xl  pb-3">
+          <li className="text-xl  pb-3"
+          onMouseEnter={toggleStudentMenuOpen}
+          onMouseLeave={handleStudentLeave}
+          >
             <NavLink
               
-              to="/admission"
-              className="text-white hover:text-gray-400 duration-500 md:w-36 md:border-r-4 md:border-red-600 md:px-2 gap-2 px-4 md:font-bold"
+              to="/StudentLife"
+              className="text-white hover:text-gray-400 duration-500 relative flex items-center md:border-r-4 md:border-red-600 md:px-2 gap-2 md:font-bold"
               
-              onMouseEnter={toggleStudentMenuOpen}
-              onMouseLeave={handleStudentLeave}
+              
             >
              Students Life
+             
      
             </NavLink>
-            {studentLifeMenuOpen && (
-              <div
-                
-                className="absolute  md:mr-4 mt-[0px] bg-white p-2 shadow-lg z-50 text-left"
-                onMouseLeave={handleStudentLeave}
-              >
-                <li  className="text-lg py-1">
-                  <NavLink
-                   
-                    to="/academics/programs"
-                    className="text-sky-900 flex hover:text-sky-900 duration-500  border-l-4 border-yellow-500 px-4 font-bold"
-                    onClick={closeNavBar}
-                  >
-                    Clubs and Organisation
-                  </NavLink>
-                </li>
-                <li  className="text-lg py-1">
-                  <NavLink
-                    
-                    to="/academics/departments"
-                    className="text-sky-900 hover:text-sky-900 duration-500 block border-l-4 border-white px-4 font-bold"
-                    onClick={closeNavBar}
-                  >
-                    Sports and Activities
-                  </NavLink>
-                </li>
-                <li  className="text-lg py-1">
-                  <NavLink
-                    
-                    to="/academics/departments"
-                    className="text-sky-900 hover:text-sky-900 duration-500 block border-l-4 border-red-900 px-4 font-bold"
-                    onClick={closeNavBar}
-                  >
-                    Events and Competitions
-                  </NavLink>
-                </li>
-                <li  className="text-lg py-1">
-                  <NavLink
-                    
-                    to="/academics/departments"
-                    className="text-sky-900 hover:text-sky-900 duration-500 block border-l-4 border-indigo-800 px-4 font-bold"
-                    onClick={closeNavBar}
-                  >
-                    Students Achievement
-                  </NavLink>
-                </li>
-
-              </div>
-            )}
+            
           </li>
-          {/* Contact menu on md screen */}
-          <li className="text-xl  pb-3">
-            <NavLink
-              
-              to="/admission"
-              className="text-white hover:text-gray-400 duration-500 md:w-36 md:font-bold gap-2"
-             
-              onMouseEnter={toggleContactMenu}
-              onMouseLeave={handleContactLeave}
-            >
-             Contact
-        
-
-            </NavLink>
-            {contactMenuOpen && (
-              <div
-                
-                className="absolute  md:mr-4 mt-[0px] bg-white p-2 shadow-lg z-50 text-left"
-                onMouseLeave={handleContactLeave}
-              >
-                <li  className="text-lg py-1">
-                  <NavLink
-                    
-                    to="/academics/programs"
-                    className="text-sky-900 flex hover:text-sky-900 duration-500  border-l-4 border-yellow-500 px-4 font-bold"
-                    onClick={closeNavBar}
-                  >
-                    Location and Map
-                  </NavLink>
-                </li>
-                <li  className="text-lg py-1">
-                  <NavLink
-                    
-                    to="/academics/departments"
-                    className="text-sky-900 hover:text-sky-900 duration-500 block border-l-4 border-white px-4 font-bold"
-                    onClick={closeNavBar}
-                  >
-                    Feedback Form
-                  </NavLink>
-                </li>
-              
-                
-
-              </div>
-            )}
-          </li>
+         
           
         </ul>
 
@@ -487,7 +418,7 @@ const NavBar = () => {
         
         >
           {/* Home */}
-          <li className="text-xl md:border-b md:border-gray-300 pb-3 cursor-pointer">
+          <li className="text-xl md:border-b md:border-gray-300 pb-3  cursor-pointer">
             <NavLink
               
               to="/"
@@ -505,7 +436,7 @@ const NavBar = () => {
               <div
                 
                
-                className="text-white  nav-link hover:text-gray-400 duration-500 relative flex items-center font-bold text-xl font-Poppins "
+                className="text-white  nav-link hover:text-gray-400 duration-500   flex items-center font-bold text-xl font-Poppins "
               
                 onClick={toggleAboutMenu}
                 
@@ -518,8 +449,8 @@ const NavBar = () => {
                     fill="none"
                     viewBox="0 0 24 24"
                     stroke="currentColor"
-                    className={`h-6 w-6 ml-2 transition-transform duration-300 transform md:hidden`}
-                    style={{ marginLeft: "45px" }}
+                    className={`h-6 w-6 absolute right-1 transition-transform duration-300 transform md:hidden`}
+                    
                   >
                     <path
                       strokeLinecap="round"
@@ -534,8 +465,8 @@ const NavBar = () => {
                     fill="none"
                     viewBox="0 0 24 24"
                     stroke="currentColor"
-                    className={`h-6 w-6 ml-2 transition-transform duration-300 transform rotate-180 md:hidden`}
-                    style={{ marginLeft: "45px" }}
+                    className={`h-6 w-6 absolute right-1 transition-transform duration-300 transform rotate-180 md:hidden`}
+                    
                   >
                     <path
                       strokeLinecap="round"
@@ -550,7 +481,7 @@ const NavBar = () => {
             {aboutMenuOpen && (
               <div
              
-                className="absolute top-30  mt-4 bg-sky-900  p-2  shadow-lg z-50  left-0 "
+                className=" top-30  mt-2 bg-sky-900 p-2 rounded-md shadow-lg z-50 w-full left-0"
                 
               >
                 <li  className="text-lg py-1">
@@ -610,8 +541,8 @@ const NavBar = () => {
                     fill="none"
                     viewBox="0 0 24 24"
                     stroke="currentColor"
-                    className={`h-6 w-6 ml-2 transition-transform duration-300 transform md:hidden`}
-                    style={{ marginLeft: "32px" }}
+                    className={`h-6 w-6 absolute right-6 transition-transform duration-300 transform md:hidden`}
+                    
                   >
                     <path
                       strokeLinecap="round"
@@ -626,8 +557,8 @@ const NavBar = () => {
                     fill="none"
                     viewBox="0 0 24 24"
                     stroke="currentColor"
-                    className={`h-6 w-6 ml-2 transition-transform duration-300 transform rotate-180 md:hidden`}
-                    style={{ marginLeft: "32px" }}
+                    className={`h-6 w-6 absolute right-6 transition-transform duration-300 transform rotate-180 md:hidden`}
+                 
                   >
                     <path
                       strokeLinecap="round"
@@ -642,7 +573,7 @@ const NavBar = () => {
             {academicsMenuOpen && (
               <div
                 
-                className="absolute top-30  mt-2 bg-sky-900 p-2 rounded-md shadow-lg z-50 w-full left-0"
+                className=" top-29  mt-2 bg-sky-900 p-2  shadow-lg z-50 w-full left-0"
                 
                 
               >
@@ -657,17 +588,7 @@ const NavBar = () => {
                     Academic Programs
                   </NavLink>
                 </li>
-                <li  className="text-lg py-1">
-                  <NavLink
-                    
-                    to="/academics/departments"
-                    className="text-white nav-link hover:text-gray-400 duration-500 block font-bold text-xl font-Poppins ml-6 border-l-4 border-gray-700 px-4"
-                    onClick={closeNavBar}
-                    
-                  >
-                    Departments
-                  </NavLink>
-                </li>
+                
                 <li  className="text-lg py-1">
                   <NavLink
                     
@@ -683,7 +604,7 @@ const NavBar = () => {
                   <NavLink
                     
                     to="/academics/grading"
-                    className="text-white nav-link hover:text-gray-400 duration-500 block font-bold text-xl font-Poppins ml-6 border-l-4 border-pink-500 px-4"
+                    className="text-white nav-link hover:text-gray-400 duration-500 block font-bold text-xl font-Poppins ml-6 border-l-4 border-pink-500 px-4 "
                     onClick={closeNavBar}
                     
                   >
@@ -711,8 +632,8 @@ const NavBar = () => {
                     fill="none"
                     viewBox="0 0 24 24"
                     stroke="currentColor"
-                    className={`h-6 w-6 ml-2 transition-transform duration-300 transform md:hidden right-8`}
-                    style={{ marginLeft: "24px" }}
+                    className={`h-6 w-6 absolute right-6 transition-transform duration-300 transform md:hidden `}
+                    
                   >
                     <path
                       strokeLinecap="round"
@@ -727,8 +648,8 @@ const NavBar = () => {
                     fill="none"
                     viewBox="0 0 24 24"
                     stroke="currentColor"
-                    className={`h-6 w-6 ml-2 transition-transform duration-300 transform rotate-180 md:hidden`}
-                    style={{ marginLeft: "24px" }}
+                    className={`h-6 w-6 absolute right-6 transition-transform duration-300 transform rotate-180 md:hidden`}
+                    
                   >
                     <path
                       strokeLinecap="round"
@@ -743,7 +664,7 @@ const NavBar = () => {
             {admissionMenuOpen && (
               <div
                 
-                className="absolute top-30 left-0 mt-2 bg-sky-900 p-2 rounded-md shadow-lg z-50 w-full h-full"
+                className=" top-30 left-0 mt-2 bg-sky-900 p-2 rounded-md shadow-lg z-50 w-full h-full"
                 
               >
                 <li  className="text-lg py-1">
@@ -779,24 +700,16 @@ const NavBar = () => {
                     Scholarships and Financial Aid
                   </NavLink>
                 </li>
-                <li  className="text-lg py-1">
-                  <NavLink
-                    
-                    to="/admission/application"
-                    className="text-white nav-link hover:text-gray-400 duration-500 block font-bold text-xl font-Poppins ml-6 border-l-4 border-yellow-500 px-4"
-                    onClick={closeNavBar}
-                    
-                  >
-                    Application Process
-                  </NavLink>
-                </li>
+                
               </div>
             )}
           </li>
           {/* Students life */}
           
           <li  className="text-xl md:border-b md:border-gray-300 pb-3 cursor-pointer">
-            <div className="flex items-center">
+            <NavLink className="flex items-center"
+            to='/StudentLife'
+            >
               <div
                 
                 
@@ -806,175 +719,10 @@ const NavBar = () => {
                 
               >
                 <span>Students Life</span>
-                {!studentLifeMenuOpen ? (
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                    className={`h-6 w-6 ml-2 transition-transform duration-300 transform md:hidden`}
-                    style={{ marginRight: "4px" }}
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M19 9l-7 7-7-7"
-                    />
-                  </svg>
-                ) : (
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                    className={`h-6 w-6 ml-2 transition-transform duration-300 transform rotate-180 md:hidden`}
-                    style={{ marginRight: "2px" }}
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M19 9l-7 7-7-7"
-                    />
-                  </svg>
-                )}
+                
               </div>
-            </div>
-            {studentLifeMenuOpen && (
-              <div
-               
-                className="absolute top-30 left-0 mt-2 bg-sky-900 p-2 rounded-md shadow-lg z-50 w-full"
-            
-              >
-                <li  className="text-lg py-1">
-                  <NavLink
-                    
-                    to="/admission/requirements"
-                    className="text-white hover:text-gray-400 duration-500 block font-bold text-xl font-Poppins ml-6 border-l-4 border-yellow-500 px-4"
-                    onClick={closeNavBar}
-                    
-                  >
-                   Clubs and Organization
-                  </NavLink>
-                </li>
-                <li  className="text-lg py-1">
-                  <NavLink
-                    
-                    to="/admission/tuition"
-                    className="text-white hover:text-gray-400 duration-500 block font-bold text-xl font-Poppins ml-6 border-l-4 border-white px-4"
-                    onClick={closeNavBar}
-                  
-                  >
-                    Sports & Activities
-                  </NavLink>
-                </li>
-                <li  className="text-lg py-1">
-                  <NavLink
-                    
-                    to="/admission/Scholarships"
-                    className="text-white hover:text-gray-400 duration-500 block font-bold text-xl font-Poppins ml-6 border-l-4 border-red-900 px-4"
-                    onClick={closeNavBar}
-                    
-                  >
-                    Events and Competitions
-                  </NavLink>
-                </li>
-                <li  className="text-lg py-1">
-                  <NavLink
-                    
-                    to="/admission/application"
-                    className="text-white hover:text-gray-400 duration-500 block font-bold text-xl font-Poppins ml-6 border-l-4 border-indigo-800 px-4"
-                    onClick={closeNavBar}
-                    
-                  >
-                    Student Achievements
-                  </NavLink>
-                </li>
-              </div>
-            )}
-          </li>
-          {/* Contacts menu */}
-          
-
-          <li  className="text-xl md:border-b md:border-gray-300 pb-3 cursor-pointer">
-            <div className="flex items-center">
-              <div
-                
-                
-                className="text-white nav-link hover:text-gray-400 duration-500 flex font-bold text-xl font-Poppins"
-                
-                onClick={toggleContactMenu}
-                
-              >
-                <span>Contact Us</span>
-                {!contactMenuOpen ? (
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                    className={`h-6 w-6 ml-7 transition-transform duration-300 transform md:hidden`}
-                    style={{ marginRight: "24px" }}
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M19 9l-7 7-7-7"
-                    />
-                  </svg>
-                ) : (
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                    className={`h-6 w-6 ml-7 transition-transform duration-300 transform rotate-180 md:hidden`}
-                    style={{ marginRight: "24px" }}
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M19 9l-7 7-7-7"
-                    />
-                  </svg>
-                )}
-              </div>
-            </div>
-            {contactMenuOpen && (
-              <motion.div
-                
-                className="absolute top-30 left-0 mt-2 bg-sky-900 p-2 rounded-md shadow-lg z-50 w-full"
-               
-              >
-                <li  className="text-lg py-1">
-                  <NavLink
-                    
-                    to="/admission/requirements"
-                    className="text-white hover:text-gray-400 duration-500 block font-bold text-xl font-Poppins ml-6 border-l-4 border-yellow-500 px-4"
-                    onClick={closeNavBar}
-                    
-                  >
-                   Location and map
-                  </NavLink>
-                </li>
-                <li  className="text-lg py-1">
-                  <NavLink
-                   
-                    to="/admission/tuition"
-                    className="text-white hover:text-gray-400 duration-500 block font-bold text-xl font-Poppins ml-6 border-l-4 border-white px-4"
-                    onClick={closeNavBar}
-                    
-                  >
-                    Feedback form
-                  </NavLink>
-                </li>
-                
-                
-              </motion.div>
-            )}
+            </NavLink>
+           
           </li>
           
     </motion.ul>

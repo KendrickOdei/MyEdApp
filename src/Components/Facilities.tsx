@@ -4,8 +4,8 @@ const sectionsData = [
   {
    
     images: [
-      { src: '/Lab3.JPG', name: 'Computer Lab' },
-      { src: '/Lab2.JPG', name: 'Computer Laboratory' },
+      { src: '/Lab3.JPG', name: 'Computer Laboratory' },
+      { src: '/Lab2.JPG', name: '' },
     ],
     interval: 3000, // 3 seconds
   },

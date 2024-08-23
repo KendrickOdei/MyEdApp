@@ -64,7 +64,7 @@ const Graduates = () => {
            }}
            viewport={{ once: true }}
           >
-                <img src="/Grd2.JPG"  className="w-full h-full object-cover" alt="Athlete 6" />
+                <img src="/Graduates.JPG"  className="w-full h-full object-cover" alt="Athlete 6" />
           </motion.div>
 
           <motion.div className="absolute md:left-[250px]  left-24 transform translate-y-1/2 w-20 h-16 md:h-[150px] md:w-[180px] mt-[-40px]  shadow  overflow-hidden"
@@ -82,7 +82,7 @@ const Graduates = () => {
           </motion.div>
 
 
-          <motion.div className="absolute  right-0 mb-0 transform translate-y-1/2 w-24 h-24 mt-[950px]   shadow  overflow-hidden"
+          <motion.div className="absolute  right-0 mb-0 transform translate-y-1/2 w-24 h-24 mt-[1010px]   shadow  overflow-hidden"
            initial={{ y: 50, opacity: 0 }}
            whileInView={{ y: 0, opacity: 1 }}
            transition={{
@@ -93,10 +93,10 @@ const Graduates = () => {
            }}
            viewport={{ once: true }}
           >
-                <img src="/Graduates.JPG" className="w-full h-full object-cover" alt="Athlete 6" />
+                <img src="/Grd4.JPG" className="w-full h-full object-cover" alt="Athlete 6" />
           </motion.div>
 
-          <motion.div className="absolute  right-24 transform translate-y-1/2 w-24 h-24 md:w-[160px] mt-[1250px]   shadow  overflow-hidden"
+          <motion.div className="absolute  right-24 transform translate-y-1/2 w-24 h-24 md:w-[160px] mt-[1300px]   shadow  overflow-hidden"
            initial={{ x: -100, opacity: 0 }}
            whileInView={{ x: 0, opacity: 1 }}
            transition={{
@@ -135,7 +135,7 @@ const Graduates = () => {
            }}
            viewport={{ once: true }}
           >
-                <img src="/Grd6.JPG" className="w-full h-full object-cover" alt="Athlete 6" />
+                <img src="/Graduates.JPG" className="w-full h-full object-cover" alt="Athlete 6" />
           </motion.div>
 
           <motion.div className="absolute  left-0 hidden sm:block  md:left-[640px] transform translate-y-1/2 w-24 h-20 md:w-[150px] md:h-[180px] mb-[-1120px]   shadow  overflow-hidden"
