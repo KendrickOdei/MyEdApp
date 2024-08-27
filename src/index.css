@@ -201,12 +201,18 @@ body {
 }
 @media (min-width: 820px){
   .graduates{
-    margin-top: 1020px;
+    margin-top: 810px;
   }
+ 
 }
 @media (min-width: 830px){
   .graduates{
     margin-top: 1050px;
+  }
+}
+@media (min-width: 1104px){
+  .graduates{
+    margin-top: 600px;
   }
 }
 

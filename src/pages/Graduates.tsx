@@ -8,10 +8,10 @@ const Graduates = () => {
   
 
   return (
-    <section className="bg-black  graduates min-h-[800px]">
+    <section className="bg-black  graduates min-h-[800px] z-50">
       
-      <div className=" p-1 left-0 rounded-md flex mt-16  items-center border-container ml-4 ">
-          <motion.div className="absolute mt-8 right-0 transform translate-y-1/2 w-32 h-24 md:h-[150px] md:w-[200px] shadow rounded overflow-hidden"
+      <div className=" p-1 left-0  rounded-md flex mt-16  items-center border-container ml-4 ">
+          <motion.div className="absolute  mt-8 right-0 transform translate-y-1/2 w-32 h-24 md:h-[150px] md:w-[200px] shadow rounded overflow-hidden"
               initial={{ y: 50, opacity: 0 }}
               whileInView={{ y: 0, opacity: 1 }}
               transition={{
@@ -25,7 +25,7 @@ const Graduates = () => {
                 <img src="/Grd1.JPG" className="w-full h-full object-cover " alt="Athlete 6" />
           </motion.div>
 
-          <motion.div className="absolute  left-0 transform translate-y-1/2 w-28 h-28 md:h-[180px] md:w-[150px] mt-48 shadow rounded overflow-hidden"
+          <motion.div className="absolute   left-0 transform translate-y-1/2 w-28 h-28 md:h-[180px] md:w-[150px] mt-48 shadow rounded overflow-hidden"
            initial={{ y: 50, opacity: 0 }}
            whileInView={{ y: 0, opacity: 1 }}
            transition={{
@@ -67,7 +67,7 @@ const Graduates = () => {
                 <img src="/Graduates.JPG"  className="w-full h-full object-cover" alt="Athlete 6" />
           </motion.div>
 
-          <motion.div className="absolute md:left-[250px]  left-24 transform translate-y-1/2 w-20 h-16 md:h-[150px] md:w-[180px] mt-[-40px]  shadow  overflow-hidden"
+          <motion.div className="absolute md:left-[250px]   left-24 transform translate-y-1/2 w-20 h-16 md:h-[150px] md:w-[180px] mt-[-40px]  shadow  overflow-hidden"
            initial={{ y: 50, opacity: 0 }}
            whileInView={{ y: 0, opacity: 1 }}
            transition={{
@@ -96,7 +96,7 @@ const Graduates = () => {
                 <img src="/Grd4.JPG" className="w-full h-full object-cover" alt="Athlete 6" />
           </motion.div>
 
-          <motion.div className="absolute  right-24 transform translate-y-1/2 w-24 h-24 md:w-[160px] mt-[1300px]   shadow  overflow-hidden"
+          <motion.div className="absolute   right-24 transform translate-y-1/2 w-24 h-24 md:w-[160px] mt-[1300px]   shadow  overflow-hidden"
            initial={{ x: -100, opacity: 0 }}
            whileInView={{ x: 0, opacity: 1 }}
            transition={{

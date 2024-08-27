@@ -108,6 +108,7 @@ const NavBar = () => {
           <li className="text-xl  pb-1 relative"
           onMouseEnter={toggleAboutMenu}
           onMouseLeave={handleAboutLeave}
+          onClick = {toggleAboutMenu}
           >
             <div className="flex items-center">
               <div
@@ -197,6 +198,7 @@ const NavBar = () => {
           <li className="text-xl  pb-1"
            onMouseEnter={toggleAcademicMenu}
            onMouseLeave={handleAcademicsLeave}
+           onClick={toggleAcademicMenu}
           >
             <div>
               <NavLink
@@ -280,6 +282,7 @@ const NavBar = () => {
           <li className="text-xl  pb-3"
             onMouseEnter={toggleAdmissionMenu}
             onMouseLeave={handleAdmissionLeave}
+            onClick={toggleAdmissionMenu}
           >
             <NavLink
               
@@ -362,6 +365,7 @@ const NavBar = () => {
           <li className="text-xl  pb-3"
           onMouseEnter={toggleStudentMenuOpen}
           onMouseLeave={handleStudentLeave}
+          
           >
             <NavLink
               

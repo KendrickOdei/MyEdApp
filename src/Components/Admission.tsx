@@ -1,12 +1,29 @@
-
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
+import emailjs from 'emailjs-com';
 
 
 
 
 
 export default function Admission() {
- 
+  const form = useRef<HTMLFormElement>(null);
+
+  const sendEmail = (e: React.FormEvent) => {
+    e.preventDefault();
+
+    if (form.current) { // Ensure form.current is not null
+      emailjs.sendForm('service_mxi90ob', 'template_j0vx3c9', form.current, 'Cv9fwrkusCgzJFXKH')
+        .then((result) => {
+            console.log(result.text);
+            alert('Message sent successfully!');
+        }, (error) => {
+            console.log(error.text);
+            alert('Failed to send message, please try again.');
+        });
+    } else {
+      console.error('Form reference is null.');
+    }
+  };
 
     useEffect(() => {
         window.scrollTo(0, 0); // Scrolls to the top when the component mounts
@@ -40,7 +57,7 @@ export default function Admission() {
         </div>
 
         <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
-          <form className="space-y-6" >
+          <form ref={form} onSubmit={sendEmail} className="space-y-6" >
             <div>
               <label
                 htmlFor="firstName"
@@ -50,6 +67,9 @@ export default function Admission() {
               </label>
               <div className="mt-2">
                 <input
+                name="firstName" 
+                type="text"
+                 required
                   id="firstName"
                   className="block w-full rounded-md border-0 py-1.5 text-black  shadow-sm   placeholder:text-black focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-2"
                  
@@ -59,14 +79,17 @@ export default function Admission() {
             </div>
             <div>
               <label
-                htmlFor="firstName"
+                htmlFor="secondName"
                 className="block text-sm font-medium leading-2 text-white"
               >
                Second Name
               </label>
               <div className="mt-2">
                 <input
-                  id="firstName"
+                name="secondName"
+                 type="text"
+                  required
+                  id="secondName"
                   className="block w-full rounded-md border-0 py-1.5 text-black shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-2"
                  
                 />
@@ -83,6 +106,9 @@ export default function Admission() {
               </label>
               <div className="mt-2">
                 <input
+                name="lastName"
+                 type="text"
+                  required
                   id="lastName"
                   className="block w-full rounded-md border-0 py-1.5 text-black shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                   
@@ -93,14 +119,17 @@ export default function Admission() {
 
             <div>
             <label
-                htmlFor="grade"
+                htmlFor="class"
                 className="block text-sm font-medium leading-6 text-white"
             >
                 Class
             </label>
             <div className="mt-2">
             <select
-                id="grade"
+                name="class"
+             
+                required
+                id="class"
                 className="block w-full rounded-md border-0 py-1.5 text-black shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 overflow-auto max-h-40"
             >
                 <option value="">Select Class</option>
@@ -138,14 +167,17 @@ export default function Admission() {
        {/* Full Name */}
        <div>
               <label
-                htmlFor="firstName"
+                htmlFor="fullName"
                 className="block text-sm font-medium leading-2 text-white"
               >
                 Full Name
               </label>
               <div className="mt-2">
                 <input
-                  id="firstName"
+                name="fullName" 
+                type="text"
+                 required
+                  id="fullName"
                   className="block w-full rounded-md border-0 py-1.5 text-black shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-2"
                  
                 />
@@ -164,6 +196,8 @@ export default function Admission() {
           </label>
           <div className="mt-2">
             <input
+            name="phoneNumber" 
+             required
               id="phoneNumber"
               type="tel"
               className="block w-full rounded-md border-0 py-1.5 text-black shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
@@ -181,8 +215,10 @@ export default function Admission() {
           </label>
           <div className="mt-2">
             <input
-              id="email"
-              type="email"
+            name="email" // Updated to match template variable
+            id="email"
+            type="email"
+            required
               className="block w-full rounded-md border-0 py-1.5 text-black shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
        
             />
@@ -200,8 +236,10 @@ export default function Admission() {
           </label>
           <div className="mt-2">
             <input
-              id="homeAddress"
-              type="text"
+            name="homeAddress" // Updated to match template variable
+            id="homeAddress"
+            type="text"
+            required
               className="block w-full rounded-md border-0 py-1.5 text-black shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
               
             />
@@ -218,8 +256,10 @@ export default function Admission() {
           </label>
           <div className="mt-2">
             <input
-              id="occupation"
-              type="text"
+            name="occupation" // Updated to match template variable
+            id="occupation"
+            type="text"
+            required
               className="block w-full rounded-md border-0 py-1.5 text-black shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
           
             />
