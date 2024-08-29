@@ -8,9 +8,9 @@ import {  motion } from "framer-motion";
 const NavBar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [aboutMenuOpen, setAboutMenuOpen] = useState(false);
-  const [academicsMenuOpen, setAcademicsMenuOpen] = useState(false);
+ 
   const [admissionMenuOpen,setAdmissionsMenuOpen] = useState(false);
-  const [studentLifeMenuOpen,setStudentLifeMenuOpen] = useState(false);
+  
 
 
   const toggleNavBar = () => {
@@ -24,24 +24,17 @@ const NavBar = () => {
 
   };
 
-  const toggleAcademicMenu = () => {
-    setAcademicsMenuOpen(!academicsMenuOpen);
-    // Uncomment the line below if you want to close the main menu when toggling academicsMenuOpen
-    // setIsOpen(false);
-  };
   const toggleAdmissionMenu = () =>{
     setAdmissionsMenuOpen(!admissionMenuOpen);
   }
-  const toggleStudentMenuOpen = () => {
-    setStudentLifeMenuOpen(!studentLifeMenuOpen)
-  }
+ 
 
   const closeNavBar = () => {
     setIsOpen(false);
     setAboutMenuOpen(false); // Ensure to close submenu when closing navbar
-    setAcademicsMenuOpen(false);
+   
     setAdmissionsMenuOpen(false)
-    setStudentLifeMenuOpen(false)
+  
   };
 
 
@@ -49,15 +42,8 @@ const NavBar = () => {
   const handleAboutLeave = () => {
     setAboutMenuOpen(false);
   };
-  const handleAcademicsLeave = () => {
-    setAcademicsMenuOpen(false);
-  };
-  const handleAdmissionLeave = () => {
-    setAdmissionsMenuOpen(false)
-  }
-  const handleStudentLeave = () => {
-    setStudentLifeMenuOpen(false)
-  }
+  
+ 
  
 
  
@@ -167,17 +153,7 @@ const NavBar = () => {
                     About Ed
                   </NavLink>
                 </li>
-                <li className="text-lg py-1">
-                  <NavLink
-                    
-                    to="/about/mission"
-                    className="text-sky-900 hover:text-sky-900 duration-500 block border-l-4 border-pink-500 px-2 font-bold"
-                    onClick={closeNavBar}
-                 
-                  >
-                   History and Mission
-                  </NavLink>
-                </li>
+                
                 <li  className="text-lg py-1">
                   <NavLink
                 
@@ -196,175 +172,50 @@ const NavBar = () => {
           </li>
           {/* Academics on md screen  */}
           <li className="text-xl  pb-1"
-           onMouseEnter={toggleAcademicMenu}
-           onMouseLeave={handleAcademicsLeave}
-           onClick={toggleAcademicMenu}
+          
+           onClick={closeNavBar}
           >
             <div>
               <NavLink
                 
-                to="/academics"
+                to="/Academics"
                 className="text-white hover:text-gray-400 duration-500 relative flex items-center md:border-r-4 md:border-red-600 md:px-2 gap-2 md:font-bold"
                
                
               >
                 <span>Academics</span>
-                <svg
-                 xmlns="http://www.w3.org/2000/svg" 
-                 fill="none"
-                viewBox="0 0 24 24"
-                  stroke-width="1.5"
-                  stroke="currentColor"
-                  className="size-6"
-                 
-                  >
-                    <path 
-                  stroke-linecap="round" 
-                  stroke-linejoin="round"
-                    d="m19.5 8.25-7.5 7.5-7.5-7.5" />
-                  </svg>
+                
 
                 
               </NavLink>
             </div>
-            {academicsMenuOpen && (
-              <div
-            
-               
-                className="absolute  md:mr-4 mt-[0px] bg-white p-2 shadow-lg z-50 text-left"
-                onMouseLeave={handleAcademicsLeave}
-              >
-                <li className="text-lg py-1">
-                  <NavLink
-                    
-                    to="/academics/programs"
-                    className="text-sky-900 hover:text-sky-900 duration-500 block border-l-4 border-orange-500 px-4 font-bold"
-                    onClick={closeNavBar}
-                  >
-                    Academic Programs
-                  </NavLink>
-                </li>
-                <li  className="text-lg py-1">
-                  <NavLink
-                   
-                    to="/academics/departments"
-                    className="text-sky-900 hover:text-sky-900 duration-500 block border-l-4 border-gray-700 px-4 font-bold"
-                    onClick={closeNavBar}
-                  >
-                    Departments
-                  </NavLink>
-                </li>
-                <li  className="text-lg py-1">
-                  <NavLink
-                    
-                    to="/academics/departments"
-                    className="text-sky-900 hover:text-sky-900 duration-500 block border-l-4 border-yellow-500 px-4 font-bold"
-                    onClick={closeNavBar}
-                  >
-                    Curriculum
-                  </NavLink>
-                </li>
-                <li  className="text-lg py-1">
-                  <NavLink
-                    
-                    to="/academics/departments"
-                    className="text-sky-900 hover:text-sky-900 duration-500 block border-l-4 border-pink-500 px-4 font-bold"
-                    onClick={closeNavBar}
-                  >
-                    Grading System
-                  </NavLink>
-                </li>
-
-              </div>
-            )}
+           
           </li>
           {/* Admission on md screen */}
           <li className="text-xl  pb-3"
-            onMouseEnter={toggleAdmissionMenu}
-            onMouseLeave={handleAdmissionLeave}
-            onClick={toggleAdmissionMenu}
+            
+           
           >
             <NavLink
               
-              to="/admission"
+              to="/Admission"
               className="text-white hover:text-gray-400 duration-500 relative flex items-center md:border-r-4 md:border-red-600 md:px-2 gap-2 md:font-bold"
               
             
             >
               <span>Admission</span>
-              <svg
-                 xmlns="http://www.w3.org/2000/svg" 
-                 fill="none"
-                viewBox="0 0 24 24"
-                  stroke-width="1.5"
-                  stroke="currentColor"
-                  className="size-6"
-                 
-                  >
-                    <path 
-                  stroke-linecap="round" 
-                  stroke-linejoin="round"
-                    d="m19.5 8.25-7.5 7.5-7.5-7.5" />
-                  </svg>
+              
          
 
               
 
             </NavLink>
-            {admissionMenuOpen && (
-              <div
-                
-                className="absolute  md:mr-4 mt-[0px] bg-white p-2 shadow-lg z-50 text-left"
-                onMouseLeave={handleAdmissionLeave}
-              >
-                <li  className="text-lg py-1">
-                  <NavLink
-                    
-                    to="/academics/programs"
-                    className="text-sky-900 flex hover:text-sky-900 duration-500  border-l-4 border-red-500 px-4 font-bold"
-                    onClick={closeNavBar}
-                  >
-                    Admission Requirements
-                  </NavLink>
-                </li>
-                <li  className="text-lg py-1">
-                  <NavLink
-                    
-                    to="/academics/departments"
-                    className="text-sky-900 hover:text-sky-900 duration-500 block border-l-4 border-violet-800 px-4 font-bold"
-                    onClick={closeNavBar}
-                  >
-                    Tuition and Fees
-                  </NavLink>
-                </li>
-                <li  className="text-lg py-1">
-                  <NavLink
-                    
-                    to="/academics/departments"
-                    className="text-sky-900 hover:text-sky-900 duration-500 block border-l-4 border-pink-800 px-4 font-bold"
-                    onClick={closeNavBar}
-                  >
-                    Scholarships and Financial Aid
-                  </NavLink>
-                </li>
-                <li className="text-lg py-1">
-                  <NavLink
-                   
-                    to="/academics/departments"
-                    className="text-sky-900 hover:text-sky-900 duration-500 block border-l-4 border-yellow-500 px-4 font-bold"
-                    onClick={closeNavBar}
-                  >
-                    Application Process
-                  </NavLink>
-                </li>
-
-              </div>
-            )}
+            
           </li>
           {/* Student life on md screen */}
           <li className="text-xl  pb-3"
-          onMouseEnter={toggleStudentMenuOpen}
-          onMouseLeave={handleStudentLeave}
+           onClick={closeNavBar}
+        
           
           >
             <NavLink
@@ -372,7 +223,7 @@ const NavBar = () => {
               to="/StudentLife"
               className="text-white hover:text-gray-400 duration-500 relative flex items-center md:border-r-4 md:border-red-600 md:px-2 gap-2 md:font-bold"
               
-              
+             
             >
              Students Life
              
@@ -434,7 +285,7 @@ const NavBar = () => {
               Home
             </NavLink>
           </li>
-          {/* About Ed */}
+               {/* About Ed */}
           <li  className="text-xl md:border-b md:border-gray-300 pb-3 relative ">
             <div className="flex items-center">
               <div
@@ -499,17 +350,7 @@ const NavBar = () => {
                     About Ed
                   </NavLink>
                 </li>
-                <li  className="text-lg py-1">
-                  <NavLink
-                    
-                    to="/about/history"
-                    className="text-white hover:text-gray-400 duration-500 block font-bold text-xl font-Poppins border-l-4 border-pink-500 px-4"
-                    onClick={closeNavBar}
-                    
-                  >
-                    History
-                  </NavLink>
-                </li>
+                
                 <li  className="text-lg py-1">
                   <NavLink
                     
@@ -528,95 +369,30 @@ const NavBar = () => {
        {/* Academics */}
       {/* Academics */}
       <li className="text-xl md:border-b md:border-gray-300 pb-3 cursor-pointer">
-            <div className="flex items-center">
+        <NavLink
+        to='/Academics'
+        onClick={closeNavBar}
+        >
+
+        <div className="flex items-center">
               <div
                 
                 
                 className="text-white nav-link hover:text-gray-400 duration-500 flex font-bold text-xl font-Poppins"
                 
-                onClick={toggleAcademicMenu}
+                
             
                 
               >
                 <span>Academics</span>
-                {!academicsMenuOpen ? (
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                    className={`h-6 w-6 absolute right-6 transition-transform duration-300 transform md:hidden`}
-                    
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M19 9l-7 7-7-7"
-                    />
-                  </svg>
-                ) : (
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                    className={`h-6 w-6 absolute right-6 transition-transform duration-300 transform rotate-180 md:hidden`}
-                 
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M19 9l-7 7-7-7"
-                    />
-                  </svg>
-                )}
+                
+                
               </div>
             </div>
-            {academicsMenuOpen && (
-              <div
-                
-                className=" top-29  mt-2 bg-sky-900 p-2  shadow-lg z-50 w-full left-0"
-                
-                
-              >
-                <li  className="text-lg py-1">
-                  <NavLink
-                    
-                    to="/academics/programs"
-                    className="text-white nav-link hover:text-gray-400 duration-500 block font-bold text-xl font-Poppins ml-6 border-l-4 border-orange-500 px-4"
-                    onClick={closeNavBar}
-                    
-                  >
-                    Academic Programs
-                  </NavLink>
-                </li>
-                
-                <li  className="text-lg py-1">
-                  <NavLink
-                    
-                    to="/academics/curriculum"
-                    className="text-white nav-link hover:text-gray-400 duration-500 block font-bold text-xl font-Poppins ml-6 border-l-4 border-yellow-500 px-4"
-                    onClick={closeNavBar}
-                    
-                  >
-                    Curriculum
-                  </NavLink>
-                </li>
-                <li  className="text-lg py-1">
-                  <NavLink
-                    
-                    to="/academics/grading"
-                    className="text-white nav-link hover:text-gray-400 duration-500 block font-bold text-xl font-Poppins ml-6 border-l-4 border-pink-500 px-4 "
-                    onClick={closeNavBar}
-                    
-                  >
-                    Grading System
-                  </NavLink>
-                </li>
-              </div>
-            )}
+
+        </NavLink>
+            
+            
           </li>
           {/* Admissions */}
           <li  className="text-xl md:border-b md:border-gray-300 pb-3 cursor-pointer">
@@ -682,17 +458,7 @@ const NavBar = () => {
                    Admission Process
                   </NavLink>
                 </li>
-                <li  className="text-lg py-1">
-                  <NavLink
-                   
-                    to="/admission/tuition"
-                    className="text-white nav-link hover:text-gray-400 duration-500 block font-bold text-xl font-Poppins ml-6 border-l-4 border-violet-800 px-4"
-                    onClick={closeNavBar}
-                    
-                  >
-                    Tuition and Fees
-                  </NavLink>
-                </li>
+                
                 <li className="text-lg py-1">
                   <NavLink
                     
@@ -711,15 +477,17 @@ const NavBar = () => {
           {/* Students life */}
           
           <li  className="text-xl md:border-b md:border-gray-300 pb-3 cursor-pointer">
+            
             <NavLink className="flex items-center"
             to='/StudentLife'
+            onClick={closeNavBar}
             >
               <div
                 
                 
                 className="text-white hover:text-gray-400 duration-500 flex font-bold text-xl font-Poppins"
                 
-                onClick={toggleStudentMenuOpen}
+                
                 
               >
                 <span>Students Life</span>

@@ -13,7 +13,7 @@ export default function Footer() {
             <p className='text-white font-bold'>Contact: 0208240435, 0560143603.</p>
           </div>
           <div className='mt-6 flex justify-center gap-4'>
-            <a href="https://www.facebook.com" className='text-white text-2xl'>
+            <a href="https://www.facebook.com/Ed Educational Complex" className='text-white text-2xl'>
               <FaFacebook />
             </a>
             <a href="https://twitter.com" className='text-white text-2xl'>

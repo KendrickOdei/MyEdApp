@@ -17,6 +17,8 @@ import './index.css';
 import CustomLoadingBar from './Components/CustomLoadingBar';
 import GraduationNews from './pages/GraduationNews';
 import Hero from './Components/hero';
+import StudentLifeSection from './pages/StudentLifeSection';
+import Academics from './pages/Academics';
 
 
 
@@ -46,6 +48,8 @@ const App: React.FC = () => {
         
         <Route path="/Admission" element={<Admission />} />
         <Route path="/GraduationNews" element={<GraduationNews />} />
+        <Route path="/StudentLife" element={<StudentLifeSection />} />
+        <Route path="/Academics" element={<Academics />} />
         <Route path="*" element={<Navigate to="/" />} />
       </Routes>
       

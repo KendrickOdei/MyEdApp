@@ -82,7 +82,7 @@ const Graduates = () => {
           </motion.div>
 
 
-          <motion.div className="absolute  right-0 mb-0 transform translate-y-1/2 w-24 h-24 mt-[1010px]   shadow  overflow-hidden"
+          <motion.div className="absolute  right-0  transform translate-y-1/2 w-24 h-24 mt-[1070px]   shadow  overflow-hidden"
            initial={{ y: 50, opacity: 0 }}
            whileInView={{ y: 0, opacity: 1 }}
            transition={{

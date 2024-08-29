@@ -52,7 +52,7 @@ export default function Admission() {
         <div className="sm:mx-auto sm:w-full sm:max-w-sm ">
          
           <h2 className="mt-10 text-center text-2xl font-bold leading-9 tracking-tight text-white">
-            Student's Details
+            LEARNER'S PERSONAL DETAILS
           </h2>
         </div>
 
@@ -60,17 +60,17 @@ export default function Admission() {
           <form ref={form} onSubmit={sendEmail} className="space-y-6" >
             <div>
               <label
-                htmlFor="firstName"
+                htmlFor="surname"
                 className="block text-sm font-medium leading-2 text-white"
               >
-                First Name
+                Surname
               </label>
               <div className="mt-2">
                 <input
-                name="firstName" 
+                name="surname" 
                 type="text"
                  required
-                  id="firstName"
+                  id="surname"
                   className="block w-full rounded-md border-0 py-1.5 text-black  shadow-sm   placeholder:text-black focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-2"
                  
                 />
@@ -79,17 +79,17 @@ export default function Admission() {
             </div>
             <div>
               <label
-                htmlFor="secondName"
+                htmlFor="firstname"
                 className="block text-sm font-medium leading-2 text-white"
               >
-               Second Name
+               First name
               </label>
               <div className="mt-2">
                 <input
-                name="secondName"
+                name="firstname"
                  type="text"
                   required
-                  id="secondName"
+                  id="firstname"
                   className="block w-full rounded-md border-0 py-1.5 text-black shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-2"
                  
                 />
@@ -99,23 +99,109 @@ export default function Admission() {
 
             <div>
               <label
-                htmlFor="lastName"
+                htmlFor="othername"
                 className="block text-sm font-medium leading-6 text-white"
               >
-                Last Name
+                Other name
               </label>
               <div className="mt-2">
                 <input
-                name="lastName"
+                name="othername"
                  type="text"
                   required
-                  id="lastName"
+                  id="othername"
                   className="block w-full rounded-md border-0 py-1.5 text-black shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                   
                 />
 
               </div>
             </div>
+            <h2 className="mt-10 text-center text-2xl font-bold leading-9 tracking-tight text-white">
+              Date of Birth
+            </h2>
+            {/* day of birth */}
+            <div className="flex gap-4">
+           
+            <select
+                name="day"
+             
+                required
+                id="day"
+                
+                className="block w-24 rounded-md border-0 py-1.5 text-black shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 overflow-auto max-h-40"
+            >
+                <option value="">Day</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+                <option value="11">11</option>
+                <option value="12">12</option>
+                <option value="13">13</option>
+                <option value="14">14</option>
+                <option value="15">15</option>
+                <option value="16">16</option>
+                <option value="17">17</option>
+                <option value="18">18</option>
+                <option value="19">19</option>
+                <option value="20">20</option>
+                <option value="21">21</option>
+                <option value="22">22</option>
+                <option value="23">23</option>
+                <option value="24">24</option>
+                <option value="25">25</option>
+                <option value="26">26</option>
+                <option value="27">27</option>
+                <option value="28">28</option>
+                <option value="29">29</option>
+                <option value="30">30</option>
+                <option value="31">31</option>
+            </select>
+            {/* month */}
+
+            <select
+                name="month"
+             
+                required
+                id="month"
+                
+                className="block w-24 rounded-md border-0 py-1.5 text-black shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 overflow-auto max-h-40"
+            >
+                <option value="">Month</option>
+                <option value="january">January</option>
+                <option value="february">February</option>
+                <option value="march">March</option>
+                <option value="april">April</option>
+                <option value="may">May</option>
+                <option value="june">June</option>
+                <option value="july">July</option>
+                <option value="august">August</option>
+                <option value="september">September</option>
+                <option value="october">October</option>
+                <option value="november">November</option>
+                <option value="december">December</option>
+                
+            </select>
+
+            <input
+                name="year" 
+                type="text"
+                 required
+                  id="year"
+                  placeholder=" Year"
+                  className="block w-24 rounded-md border-0 py-1.5 text-black shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-2"
+                 
+              />
+
+
+            </div>
+
 
             <div>
             <label
@@ -205,25 +291,7 @@ export default function Admission() {
             />
           </div>
           </div>
-          {/* Email */}
-          <div className="mb-4">
-          <label
-            htmlFor="email"
-            className="block text-sm font-medium leading-6 text-white"
-          >
-            Email Address
-          </label>
-          <div className="mt-2">
-            <input
-            name="email" // Updated to match template variable
-            id="email"
-            type="email"
-            required
-              className="block w-full rounded-md border-0 py-1.5 text-black shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-       
-            />
-          </div>
-          </div>
+         
         
         
         {/* Home Address */}
@@ -232,7 +300,7 @@ export default function Admission() {
             htmlFor="homeAddress"
             className="block text-sm font-medium leading-6 text-white"
           >
-            Home Address
+            Residential (GPS) Address
           </label>
           <div className="mt-2">
             <input
@@ -265,6 +333,29 @@ export default function Admission() {
             />
           </div>
         </div>
+        {/* health status */}
+        <div className="sm:mx-auto sm:w-full sm:max-w-sm ">
+         
+         <h2 className="mt-10 text-center text-2xl font-bold leading-9 tracking-tight text-white">
+           LEARNER'S HEALTH STATUS <br /> Immunization records: (Please select appropriately)
+         </h2>
+       </div>
+       <select
+                name="health"
+             
+                required
+                id="health"
+                className="block w-full rounded-md border-0 py-1.5 text-black shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 overflow-auto max-h-40"
+            >
+                <option value="">Select health status</option>
+                <option value="Tetanus">Tetanus</option>
+                <option value="Measles">Measles</option>
+                <option value="Pertusis">Pertusis</option>
+                <option value="BCG">BCG</option>
+                <option value="Diphtheria">Diphtheria</option>
+                <option value="Polio">Polio</option>
+                
+            </select>
         {/* submit button */}
              <div>
               <button

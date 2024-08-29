@@ -71,6 +71,20 @@ const StudentsLife = () => {
                 <img src="/SL2 .JPG"  className="w-full h-full object-cover" alt="Athlete 6" />
           </motion.div>
 
+          <motion.div className="absolute block md:hidden  left-[60PX] transform translate-y-1/2 w-28 h-28 md:h-[200px] md:w-[220px] mt-[-90px] shadow  overflow-hidden"
+           initial={{ y: 50, opacity: 0 }}
+           whileInView={{ y: 0, opacity: 1 }}
+           transition={{
+             delay: 0.4,
+             x: { type: "inertia", velocity: 10, stiffness: 30 },
+             opacity: { duration: 1, ease: "easeIn" },
+             duration: 0.3
+           }}
+           viewport={{ once: true }}
+          >
+                <img src="/CD3.jpg"  className="w-full h-full object-cover" alt="" />
+          </motion.div>
+
           <motion.div className="absolute hidden sm:block left-[420px]  transform translate-y-1/2 w-28 h-24 md:h-[220px] md:w-[200px] mt-24 shadow rounded overflow-hidden"
            initial={{ y: 50, opacity: 0 }}
            whileInView={{ y: 0, opacity: 1 }}
@@ -96,7 +110,7 @@ const StudentsLife = () => {
            }}
            viewport={{ once: true }}
           >
-                <img src="/Grd2.JPG"  className="w-full h-full object-cover" alt="Athlete 6" />
+                <img src="/SL4.JPG"  className="w-full h-full object-cover" alt="Athlete 6" />
           </motion.div>
 
           
@@ -113,7 +127,7 @@ const StudentsLife = () => {
            }}
            viewport={{ once: true }}
           >
-                <img src="/SL4.JPG" className="w-full h-full object-cover" alt="Athlete 6" />
+                <img src="/CD4.jpg" className="w-full h-full object-cover" alt="Athlete 6" />
           </motion.div>
 
           <motion.div className="absolute  right-24 transform translate-y-1/2 w-24 h-24 md:w-[160px] mt-[1250px]   shadow  overflow-hidden"
@@ -141,7 +155,7 @@ const StudentsLife = () => {
            }}
            viewport={{ once: true }}
           >
-                <img src="/Grd6.JPG" className="w-full h-full object-cover" alt="Athlete 6" />
+                <img src="/CD2.jpg" className="w-full h-full object-cover" alt="Athlete 6" />
           </motion.div>
 
           <motion.div className="absolute  left-0 hidden sm:block  md:left-[310px] transform translate-y-1/2 w-24 h-20 md:w-[230px] md:h-[130px] mb-[-1320px]   shadow  overflow-hidden"
@@ -155,7 +169,7 @@ const StudentsLife = () => {
            }}
            viewport={{ once: true }}
           >
-                <img src="/Grd6.JPG" className="w-full h-full object-cover" alt="Athlete 6" />
+                <img src="/CD5.jpg" className="w-full h-full object-cover" alt="Athlete 6" />
           </motion.div>
 
           <motion.div className="absolute  left-0 hidden sm:block  md:left-[640px] transform translate-y-1/2 w-24 h-20 md:w-[150px] md:h-[180px] mb-[-1120px]   shadow  overflow-hidden"
@@ -169,7 +183,7 @@ const StudentsLife = () => {
            }}
            viewport={{ once: true }}
           >
-                <img src="/Grd6.JPG" className="w-full h-full object-cover" alt="Athlete 6" />
+                <img src="/CD1.jpg" className="w-full h-full object-cover" alt="Athlete 6" />
           </motion.div>
 
 
@@ -184,7 +198,7 @@ const StudentsLife = () => {
           </p>
           <button className="bg-black hover:bg-[#3D2252] text-white font-bold md:text-2xl px-4 py-2 rounded ">
             <NavLink
-            to='/GraduationNews'
+            to='/StudentLife'
             >
               Read More
             </NavLink>
