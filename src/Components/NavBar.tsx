@@ -52,7 +52,7 @@ const NavBar = () => {
 
   return (
     <>
-    <nav className="w-full navBar fixed top-0 left-0 right-0 z-50 bg-sky-950 ">
+    <nav className="w-full navBar fixed top-0 left-0 right-0 z-50 bg-green-900 ">
 
     <div className="py-1 md:px-10 px-2 relative flex justify-between items-center  w-full">
     
