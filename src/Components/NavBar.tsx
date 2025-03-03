@@ -62,14 +62,14 @@ const NavBar = () => {
           <NavLink
           to='/home'
           >
-            <button>
+            <div>
           <div className=" p-1 left-0 rounded-md flex items-center border-container ml-4">
             <img className="w-10 h-14" src="/lOGO.jpg" alt="Not Supported" />
             <span className="ml-3 flex md:text-xl ED-TEXT md:font- text-left">
               Ed <br /> Educational <br /> Complex
             </span>
           </div>
-            </button>
+            </div>
           </NavLink>
             
           
