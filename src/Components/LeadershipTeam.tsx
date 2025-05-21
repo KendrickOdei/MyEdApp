@@ -7,7 +7,7 @@ import { motion } from 'framer-motion';
 
 
 export const LeadershipTeam: React.FC = () => {
-  const [currentMember, setCurrentMember] = useState(0); // 0 for Mr. Samuel Okine Doku, 1 for Mr. S, 2 for Mr. M
+  const [currentMember, setCurrentMember] = useState(0); 
 
   const nextMember = () => {
     setCurrentMember((prevMember) => (prevMember === 1 ? 0 : prevMember + 1));
